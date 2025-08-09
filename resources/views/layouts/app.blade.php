@@ -28,13 +28,11 @@
                 <nav class="hidden md:flex items-center space-x-1">
                     <a href="/" class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Beranda</a>
                     <a href="/profil" class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Profil</a>
-                    <a href="/organisasi" class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Organisasi</a>
                     <a href="/umkm" class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">UMKM</a>
                     <a href="/berita" class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Berita</a>
                     <a href="/infografis" class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Infografis</a>
                     <a href="/peta" class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Peta</a>
                     <a href="/kontak" class="px-4 py-2 text-sm font-medium rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors">Kontak</a>
-                    <a href="/login" class="ml-2 px-4 py-2 text-sm font-bold rounded-lg bg-gradient-to-r from-green-500 to-blue-500 text-white shadow hover:from-blue-500 hover:to-green-500 transition-colors">Login</a>
                 </nav>
 
                 <!-- Mobile Menu Button -->
@@ -51,41 +49,14 @@
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="/" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Beranda</a>
                 <a href="/profil" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Profil</a>
-                <a href="/organisasi" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Organisasi</a>
                 <a href="/umkm" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">UMKM</a>
                 <a href="/berita" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Berita</a>
                 <a href="/infografis" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Infografis</a>
                 <a href="/peta" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Peta</a>
                 <a href="/kontak" class="block px-3 py-2 text-base font-medium rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors">Kontak</a>
-                <a href="/login" class="block mt-2 px-3 py-2 text-base font-bold rounded-lg bg-gradient-to-r from-green-500 to-blue-500 text-white shadow hover:from-blue-500 hover:to-green-500 transition-colors">Login</a>
             </div>
         </div>
     </header>
-
-    <!-- Pop Up Selamat Datang -->
-    <div id="welcome-alert" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 transition-opacity duration-500">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center border-2 border-green-500 animate-fade-in">
-            <h2 class="text-2xl font-bold mb-2 text-green-700">Selamat Datang!</h2>
-            <p class="mb-4 text-gray-700">Selamat datang di website <span class="font-semibold text-green-600">Kampung Skouw Yambe</span>.<br/>Temukan informasi sejarah, potensi, dan keunikan kampung kami.</p>
-            <p class="mb-6 text-sm text-gray-500">Untuk akses internet, silakan klik tombol <span class="font-semibold text-blue-600">Login</span> di pojok kanan atas.</p>
-            <button onclick="document.getElementById('welcome-alert').style.display='none'; localStorage.setItem('welcome_shown', '1');" class="mt-2 px-6 py-2 rounded-lg bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold shadow hover:from-blue-600 hover:to-green-600 transition">Tutup</button>
-        </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if(localStorage.getItem('welcome_shown')) {
-                var alert = document.getElementById('welcome-alert');
-                if(alert) alert.style.display = 'none';
-            } else {
-                setTimeout(function() {
-                    var alert = document.getElementById('welcome-alert');
-                    if(alert) alert.style.display = 'none';
-                    localStorage.setItem('welcome_shown', '1');
-                }, 8000);
-            }
-        });
-    </script>
-    <!-- End Pop Up Selamat Datang -->
 
     <!-- Main Content -->
     <main>

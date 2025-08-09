@@ -59,7 +59,7 @@
     <!-- Hero Section -->
     <div class="relative h-screen" id="hero">
         <div class="absolute inset-0">
-            <img src="{{ asset('images/1.png') }}" alt="Kampung Skouw Yambe" class="w-full h-full object-cover">
+            <img src="{{ asset('images/1.jpg') }}" alt="Kampung Skouw Yambe" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
         <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
@@ -83,7 +83,7 @@
     <!-- Section Sambutan Kepala Kampung -->
     <section id="sambutan" class="py-20 bg-gray-50">
         <div class="max-w-3xl mx-auto px-4 text-center">
-            <img src="/images/kepala-kampung.jpg" alt="Kepala Kampung" class="mx-auto w-32 h-32 rounded-full object-cover mb-6 shadow-lg">
+            <img src="/images/contoh.png" alt="Kepala Kampung" class="mx-auto w-32 h-32 rounded-full object-cover mb-6 shadow-lg">
             <h2 class="text-2xl font-bold mb-2 text-green-700">Sambutan Kepala Kampung</h2>
             <p class="text-lg text-gray-700 mb-4">Assalamu'alaikum warahmatullahi wabarakatuh, Salam sejahtera untuk kita semua. Selamat datang di website resmi Kampung Skouw Yambe. Semoga website ini menjadi jendela informasi, komunikasi, dan pelayanan publik yang bermanfaat bagi seluruh warga dan pengunjung. Mari bersama membangun kampung yang maju, sejahtera, dan berbudaya.</p>
             <p class="font-semibold text-green-800">marshelius membilong<br><span class="text-sm font-normal text-gray-600">Kepala Kampung Skouw Yambe</span></p>
@@ -94,7 +94,7 @@
     <section id="map" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8 text-green-800">Peta Kampung Skouw Yambe</h2>
-            <div class="w-full h-96 rounded-xl overflow-hidden shadow-lg mb-8">
+            <div class="w-full h-64 rounded-xl overflow-hidden shadow-lg mb-8">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.9999999999995!2d140.6!3d-2.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x686c3b3b3b3b3b3b%3A0x3b3b3b3b3b3b3b3b!2sKampung%20Skouw%20Yambe%2C%20Muara%20Tami%2C%20Jayapura%2C%20Papua!5e0!3m2!1sid!2sid!4v1234567890!5m2!1sid!2sid&maptype=satellite" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="text-center">
@@ -110,70 +110,70 @@
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- Kepala Kampung -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Kampung" class="w-32 h-52 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Kepala Kampung" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Marshelius membilong</h3>
                     <p class="text-gray-600 text-center">Kepala Kampung</p>
                 </div>
 
                 <!-- Sekretaris -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Sekretaris" class="w-32 h-32 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Sekretaris" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Yansen Pattipeme</h3>
                     <p class="text-gray-600 text-center">Sekretaris</p>
                 </div>
 
                 <!-- Kaur Keuangan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Urusan Keuangan" class="w-32 h-32 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Kepala Urusan Keuangan" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Eunike Pattipeme, SE</h3>
                     <p class="text-gray-600 text-center">Kepala Urusan Keuangan</p>
                 </div>
 
                 <!-- Kaur Umum -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Urusan Umum" class="w-32 h-32 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Kepala Urusan Umum" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">George Pattipeme, S.IP</h3>
                     <p class="text-gray-600 text-center">Kepala Urusan Umum</p>
                 </div>
 
                 <!-- Kaur Perencanaan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Perencanaan dan Pembangunan" class="w-32 h-32 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Kepala Perencanaan dan Pembangunan" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Dody P. Doleng, S.IP</h3>
                     <p class="text-gray-600 text-center">Kepala Perencanaan dan Pembangunan</p>
                 </div>
 
                 <!-- Kasi Pemerintahan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Seksi Pemerintahan" class="w-32 h-32 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Kepala Seksi Pemerintahan" class="w-60 h-52 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Christofel Rollo, S.IP</h3>
                     <p class="text-gray-600 text-center">Kepala Seksi Pemerintahan</p>
                 </div>
 
                 <!-- Kasi Kesejahteraan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Seksi Kesejahteraan Masyarakat" class="w-32 h-32 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Kepala Seksi Kesejahteraan Masyarakat" class="w-60 h-52 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Nelly P. Rumanasen</h3>
                     <p class="text-gray-600 text-center">Kepala Seksi Kesejahteraan Masyarakat</p>
                 </div>
 
                 <!-- Kasi Pelayanan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Seksi Pelayanan" class="w-32 h-32 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Kepala Seksi Pelayanan" class="w-60 h-52 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Denisius Rollo</h3>
                     <p class="text-gray-600 text-center">Kepala Seksi Pelayanan</p>
                 </div>
 
                 <!-- Ketua RW I -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Ketua RW I" class="w-32 h-32 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Ketua RW I" class="w-60 h-52 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Yehuda Pattipeme</h3>
                     <p class="text-gray-600 text-center">Ketua RW I</p>
                 </div>
 
                 <!-- Ketua RW II -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Ketua RW II" class="w-32 h-32 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Ketua RW II" class="w-60 h-52 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Yunita Ramela</h3>
                     <p class="text-gray-600 text-center">Ketua RW II</p>
                 </div>
