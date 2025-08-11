@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
+use App\Models\ContactMessage;
 
 class ContactController extends Controller
 {
@@ -25,6 +26,9 @@ class ContactController extends Controller
         ];
 
         try {
+            // Simpan pesan ke database
+            ContactMessage::create($data);
+            
             Log::info('Attempting to send email', ['data' => $data]);
 
             Mail::send('emails.contact', ['data' => $data], function($message) use ($data) {
@@ -40,6 +44,16 @@ class ContactController extends Controller
                 'error' => $e->getMessage(),
                 'data' => $data
             ]);
+            
+            // Tetap simpan pesan ke database meskipun email gagal terkirim
+            try {
+                ContactMessage::create($data);
+            } catch (\Exception $dbError) {
+                Log::error('Failed to save contact message to database', [
+                    'error' => $dbError->getMessage(),
+                    'data' => $data
+                ]);
+            }
             
             return redirect()->back()
                 ->with('error', 'Maaf, terjadi kesalahan. Silakan coba lagi nanti.')

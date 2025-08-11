@@ -61,7 +61,7 @@
     <!-- Hero Section -->
     <div class="relative h-96">
         <div class="absolute inset-0">
-            <img src="{{ asset('images/1.png') }}" alt="Kontak Kampung Skouw Yambe" class="w-full h-full object-cover">
+            <img src="{{ asset('images/4.jpg') }}" alt="Kontak Kampung Skouw Yambe" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
@@ -161,7 +161,7 @@
                                 </div>
                                 <div>
                                     <h3 class="text-lg font-semibold text-gray-900">Email</h3>
-                                    <p class="text-gray-600">alfiandwiprasetyo236@gmail.com</p>
+                                    <p class="text-gray-600">kampungskouwyambe@gmail.com</p>
                                 </div>
                             </div>
                         </div>

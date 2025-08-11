@@ -145,35 +145,35 @@
 
                 <!-- Kasi Pemerintahan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Seksi Pemerintahan" class="w-60 h-52 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Kepala Seksi Pemerintahan" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Christofel Rollo, S.IP</h3>
                     <p class="text-gray-600 text-center">Kepala Seksi Pemerintahan</p>
                 </div>
 
                 <!-- Kasi Kesejahteraan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Seksi Kesejahteraan Masyarakat" class="w-60 h-52 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Kepala Seksi Kesejahteraan Masyarakat" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Nelly P. Rumanasen</h3>
                     <p class="text-gray-600 text-center">Kepala Seksi Kesejahteraan Masyarakat</p>
                 </div>
 
                 <!-- Kasi Pelayanan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Seksi Pelayanan" class="w-60 h-52 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Kepala Seksi Pelayanan" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Denisius Rollo</h3>
                     <p class="text-gray-600 text-center">Kepala Seksi Pelayanan</p>
                 </div>
 
                 <!-- Ketua RW I -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Ketua RW I" class="w-60 h-52 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Ketua RW I" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Yehuda Pattipeme</h3>
                     <p class="text-gray-600 text-center">Ketua RW I</p>
                 </div>
 
                 <!-- Ketua RW II -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Ketua RW II" class="w-60 h-52 object-cover rounded-full mb-4">
+                    <img src="/images/contoh.png" alt="Ketua RW II" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Yunita Ramela</h3>
                     <p class="text-gray-600 text-center">Ketua RW II</p>
                 </div>
@@ -188,22 +188,22 @@
             <div class="grid md:grid-cols-4 gap-8 text-center">
                 <div class="bg-green-50 rounded-xl shadow-lg p-6">
                     <h3 class="text-lg font-bold text-green-700 mb-2">Jumlah Penduduk</h3>
-                    <p class="text-3xl font-bold text-gray-900">800</p>
+                    <p class="text-3xl font-bold text-gray-900">185</p>
                     <p class="text-gray-600">Jiwa</p>
                 </div>
                 <div class="bg-green-50 rounded-xl shadow-lg p-6">
                     <h3 class="text-lg font-bold text-green-700 mb-2">Kepala Keluarga</h3>
-                    <p class="text-3xl font-bold text-gray-900">200</p>
+                    <p class="text-3xl font-bold text-gray-900">185</p>
                     <p class="text-gray-600">KK</p>
                 </div>
                 <div class="bg-green-50 rounded-xl shadow-lg p-6">
                     <h3 class="text-lg font-bold text-green-700 mb-2">Laki-laki</h3>
-                    <p class="text-3xl font-bold text-gray-900">400</p>
+                    <p class="text-3xl font-bold text-gray-900">339</p>
                     <p class="text-gray-600">Jiwa</p>
                 </div>
                 <div class="bg-green-50 rounded-xl shadow-lg p-6">
                     <h3 class="text-lg font-bold text-green-700 mb-2">Perempuan</h3>
-                    <p class="text-3xl font-bold text-gray-900">400</p>
+                    <p class="text-3xl font-bold text-gray-900">363</p>
                     <p class="text-gray-600">Jiwa</p>
                 </div>
             </div>

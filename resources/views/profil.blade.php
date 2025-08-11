@@ -4,73 +4,36 @@
 
 @section('scripts')
 <style>
+/* Animations */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
 }
-
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-30px);}
+    to { opacity: 1; transform: translateX(0);}
 }
-
 @keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(30px);}
+    to { opacity: 1; transform: translateX(0);}
 }
+.animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+.animate-slide-left { animation: slideInLeft 0.8s ease-out forwards; }
+.animate-slide-right { animation: slideInRight 0.8s ease-out forwards; }
+.animate-on-scroll { opacity: 0; transform: translateY(30px); }
 
-.animate-fade-in {
-    animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.animate-slide-left {
-    animation: slideInLeft 0.8s ease-out forwards;
-}
-
-.animate-slide-right {
-    animation: slideInRight 0.8s ease-out forwards;
-}
-
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.card-hover {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+/* Card Hover */
+.card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);}
 .card-hover:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
 }
 
-.icon-bounce {
-    transition: all 0.3s ease;
-}
+/* Icon Bounce */
+.icon-bounce { transition: all 0.3s ease;}
+.icon-bounce:hover { transform: scale(1.1) rotate(5deg); }
 
-.icon-bounce:hover {
-    transform: scale(1.1) rotate(5deg);
-}
-
+/* Gradient Text */
 .gradient-text {
     background: linear-gradient(135deg, #64748b 0%, #475569 100%);
     -webkit-background-clip: text;
@@ -78,33 +41,25 @@
     background-clip: text;
 }
 
-.floating {
-    animation: floating 3s ease-in-out infinite;
-}
-
+/* Floating */
+.floating { animation: floating 3s ease-in-out infinite;}
 @keyframes floating {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { transform: translateY(0px);}
+    50% { transform: translateY(-10px);}
 }
 
-.pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite alternate;
-}
-
+/* Pulse Glow */
+.pulse-glow { animation: pulse-glow 2s ease-in-out infinite alternate;}
 @keyframes pulse-glow {
-    from { box-shadow: 0 0 20px rgba(100, 116, 139, 0.3); }
-    to { box-shadow: 0 0 30px rgba(100, 116, 139, 0.6); }
+    from { box-shadow: 0 0 20px rgba(100, 116, 139, 0.3);}
+    to { box-shadow: 0 0 30px rgba(100, 116, 139, 0.6);}
 }
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Intersection Observer untuk animasi scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
@@ -206,9 +161,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="text-center">
                     <blockquote class="text-xl text-gray-700 italic leading-relaxed">
-                        "Mewujudkan Kampung Skouw Yambe yang <span class="font-bold text-slate-600">Mandiri</span>, 
-                        <span class="font-bold text-slate-600">Sejahtera</span>, dan 
-                        <span class="font-bold text-slate-600">Berbudaya</span> Berlandaskan Kearifan Lokal."
+                        "Mewujudkan Kampung Skouw Yambe yang <span class="font-bold text-slate-600">Bersih</span>, 
+                        <span class="font-bold text-slate-600">Indah</span>,
+                        <span class="font-bold text-slate-600">Damai</span>,<span class="font-bold text-slate-600">Aman</span>,<span class="font-bold text-slate-600">Beriman</span> dan <span class="font-bold text-slate-600">sejahtera</span> menuju masyarakat yang mandiri, dan takut akan Tuhan"
                     </blockquote>
                 </div>
             </div>
@@ -224,25 +179,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="space-y-4">
                     <div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-300">
                         <i class="fas fa-graduation-cap text-slate-600 mt-1 mr-3 icon-bounce"></i>
-                        <p class="text-gray-700">Meningkatkan kualitas pendidikan dan kesehatan masyarakat kampung</p>
+                        <p class="text-gray-700">Mengayomi masyarakat Kampung Skouw Yambe untuk memanfaatkan Sumber Daya Alam (SDA) untuk menjadi sumber ekonomi masyarakat</p>
                     </div>
                     <div class="flex items-start p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
                         <i class="fas fa-chart-line text-gray-600 mt-1 mr-3 icon-bounce"></i>
                         <p class="text-gray-700">Mengembangkan potensi ekonomi lokal berbasis pertanian, kelapa, dan UMKM</p>
+                    
+        </div>
+
+
+
+         <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
+                <div class="text-center mb-6">
+                    <div class="bg-gray-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+                        <i class="fas fa-bullseye text-gray-600 text-3xl icon-bounce"></i>
                     </div>
-                    <div class="flex items-start p-4 bg-zinc-50 rounded-lg hover:bg-zinc-100 transition-colors duration-300">
-                        <i class="fas fa-leaf text-zinc-600 mt-1 mr-3 icon-bounce"></i>
-                        <p class="text-gray-700">Melestarikan budaya dan lingkungan hidup kampung</p>
-                    </div>
-                    <div class="flex items-start p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors duration-300">
-                        <i class="fas fa-users text-neutral-600 mt-1 mr-3 icon-bounce"></i>
-                        <p class="text-gray-700">Meningkatkan tata kelola pemerintahan kampung yang transparan dan partisipatif</p>
-                    </div>
+                    <h2 class="text-3xl font-bold text-gray-700">Tujuan</h2>
                 </div>
+                <div class="space-y-4">
+                    <div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-300">
+                        <i class="fas fa-graduation-cap text-slate-600 mt-1 mr-3 icon-bounce"></i>
+                        <p class="text-gray-700">agar masyarakat dapat menjadi mandiri dan terlepas dari hidup yang ketergantungan kepada orang lain</p>
+                    </div>
+                   
+            </div>
+        </div>v
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
+                <div class="text-center mb-6">
+                    <div class="bg-gray-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+                        <i class="fas fa-bullseye text-gray-600 text-3xl icon-bounce"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-700">Sasaran</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-300">
+                        <i class="fas fa-graduation-cap text-slate-600 mt-1 mr-3 icon-bounce"></i>
+                        <p class="text-gray-700">Toko pemerintah, masyarakat, adat dan gereja</p>
+                    </div>
+                   
             </div>
         </div>
 
-        <!-- Sejarah Section -->
         <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 card-hover animate-on-scroll">
             <div class="text-center mb-8">
                 <div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
