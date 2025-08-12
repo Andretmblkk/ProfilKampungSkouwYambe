@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ArticleResource\Pages;
 use App\Filament\Resources\ArticleResource\RelationManagers;
 use App\Models\Article;
+use Illuminate\Support\Str;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -44,7 +45,20 @@ class ArticleResource extends Resource
                 Forms\Components\FileUpload::make('featured_image')
                     ->label('Gambar Utama')
                     ->image()
-                    ->directory('articles'),
+                    ->disk('public')
+                    ->directory('articles')
+                    ->maxSize(2048)
+                    ->imageEditor()
+                    ->imageResizeMode('cover')
+                    ->imageResizeTargetWidth(1600)
+                    ->imageResizeTargetHeight(900)
+                    ->imageResizeUpscale(false)
+                    ->imagePreviewHeight('250')
+                    ->getUploadedFileNameForStorageUsing(function ($file): string {
+                        $name = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                        $ext = $file->getClientOriginalExtension();
+                        return Str::slug($name) . '-' . time() . '.' . $ext;
+                    }),
                 Forms\Components\Toggle::make('is_published')
                     ->label('Publikasi')
                     ->required(),

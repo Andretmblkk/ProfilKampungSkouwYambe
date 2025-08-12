@@ -184,43 +184,44 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="flex items-start p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
                         <i class="fas fa-chart-line text-gray-600 mt-1 mr-3 icon-bounce"></i>
                         <p class="text-gray-700">Mengembangkan potensi ekonomi lokal berbasis pertanian, kelapa, dan UMKM</p>
-                    
-        </div>
-
-
-
-         <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
-                <div class="text-center mb-6">
-                    <div class="bg-gray-100 rounded-full p-4 inline-block mb-4 pulse-glow">
-                        <i class="fas fa-bullseye text-gray-600 text-3xl icon-bounce"></i>
                     </div>
-                    <h2 class="text-3xl font-bold text-gray-700">Tujuan</h2>
                 </div>
-                <div class="space-y-4">
-                    <div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-300">
-                        <i class="fas fa-graduation-cap text-slate-600 mt-1 mr-3 icon-bounce"></i>
-                        <p class="text-gray-700">agar masyarakat dapat menjadi mandiri dan terlepas dari hidup yang ketergantungan kepada orang lain</p>
-                    </div>
-                   
             </div>
-        </div>v
-
-        <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
-                <div class="text-center mb-6">
-                    <div class="bg-gray-100 rounded-full p-4 inline-block mb-4 pulse-glow">
-                        <i class="fas fa-bullseye text-gray-600 text-3xl icon-bounce"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold text-gray-700">Sasaran</h2>
+        </div>
+        
+        <!-- Tujuan Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 card-hover animate-on-scroll">
+            <div class="text-center mb-6">
+                <div class="bg-gray-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+                    <i class="fas fa-bullseye text-gray-600 text-3xl icon-bounce"></i>
                 </div>
-                <div class="space-y-4">
-                    <div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-300">
-                        <i class="fas fa-graduation-cap text-slate-600 mt-1 mr-3 icon-bounce"></i>
-                        <p class="text-gray-700">Toko pemerintah, masyarakat, adat dan gereja</p>
-                    </div>
-                   
+                <h2 class="text-3xl font-bold text-gray-700">Tujuan</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-300">
+                    <i class="fas fa-graduation-cap text-slate-600 mt-1 mr-3 icon-bounce"></i>
+                    <p class="text-gray-700">agar masyarakat dapat menjadi mandiri dan terlepas dari hidup yang ketergantungan kepada orang lain</p>
+                </div>
             </div>
         </div>
 
+        <!-- Sasaran Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 card-hover animate-on-scroll">
+            <div class="text-center mb-6">
+                <div class="bg-gray-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+                    <i class="fas fa-bullseye text-gray-600 text-3xl icon-bounce"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-700">Sasaran</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-300">
+                    <i class="fas fa-graduation-cap text-slate-600 mt-1 mr-3 icon-bounce"></i>
+                    <p class="text-gray-700">Toko pemerintah, masyarakat, adat dan gereja</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sejarah Kampung Section -->
         <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 card-hover animate-on-scroll">
             <div class="text-center mb-8">
                 <div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
@@ -359,4 +360,4 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 </div>
-@endsection 
+@endsection

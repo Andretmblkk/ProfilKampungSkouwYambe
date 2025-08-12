@@ -19,7 +19,7 @@
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{{ $article->title }}</h1>
             
             @if($article->featured_image)
-                <img src="{{ asset('storage/' . $article->featured_image) }}" 
+                <img loading="lazy" src="{{ Storage::disk('public')->url($article->featured_image) }}" 
                      alt="{{ $article->title }}" 
                      class="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg mb-6">
             @endif
@@ -46,7 +46,7 @@
                     @foreach($relatedArticles as $related)
                         <div class="bg-white rounded-lg shadow-md overflow-hidden">
                             @if($related->featured_image)
-                                <img src="{{ asset('storage/' . $related->featured_image) }}" 
+                                <img loading="lazy" src="{{ Storage::disk('public')->url($related->featured_image) }}" 
                                      alt="{{ $related->title }}" 
                                      class="w-full h-48 object-cover">
                             @endif

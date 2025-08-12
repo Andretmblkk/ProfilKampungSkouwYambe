@@ -13,11 +13,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Seed user admin minimal jika belum ada
+        if (!User::where('email', 'admin@kampung.test')->exists()) {
+            User::create([
+                'name' => 'Admin',
+                'email' => 'admin@kampung.test',
+                'password' => 'admin12345',
+                'is_admin' => true,
+            ]);
+        }
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            DataPendudukSeeder::class,
         ]);
     }
 }

@@ -59,7 +59,7 @@
     <!-- Hero Section -->
     <div class="relative h-screen" id="hero">
         <div class="absolute inset-0">
-            <img src="{{ asset('images/1.jpg') }}" alt="Kampung Skouw Yambe" class="w-full h-full object-cover">
+            <img loading="lazy" src="{{ asset('images/1.jpg') }}" alt="Kampung Skouw Yambe" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
         <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
@@ -83,7 +83,7 @@
     <!-- Section Sambutan Kepala Kampung -->
     <section id="sambutan" class="py-20 bg-gray-50">
         <div class="max-w-3xl mx-auto px-4 text-center">
-            <img src="/images/contoh.png" alt="Kepala Kampung" class="mx-auto w-32 h-32 rounded-full object-cover mb-6 shadow-lg">
+            <img loading="lazy" src="/images/contoh.png" alt="Kepala Kampung" class="mx-auto w-32 h-32 rounded-full object-cover mb-6 shadow-lg">
             <h2 class="text-2xl font-bold mb-2 text-green-700">Sambutan Kepala Kampung</h2>
             <p class="text-lg text-gray-700 mb-4">Assalamu'alaikum warahmatullahi wabarakatuh, Salam sejahtera untuk kita semua. Selamat datang di website resmi Kampung Skouw Yambe. Semoga website ini menjadi jendela informasi, komunikasi, dan pelayanan publik yang bermanfaat bagi seluruh warga dan pengunjung. Mari bersama membangun kampung yang maju, sejahtera, dan berbudaya.</p>
             <p class="font-semibold text-green-800">marshelius membilong<br><span class="text-sm font-normal text-gray-600">Kepala Kampung Skouw Yambe</span></p>
@@ -110,70 +110,70 @@
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- Kepala Kampung -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Kampung" class="w-90 h-82 object-cover rounded-full mb-4">
+                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Kampung" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Marshelius membilong</h3>
                     <p class="text-gray-600 text-center">Kepala Kampung</p>
                 </div>
 
                 <!-- Sekretaris -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Sekretaris" class="w-90 h-82 object-cover rounded-full mb-4">
+                    <img loading="lazy" src="/images/contoh.png" alt="Sekretaris" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Yansen Pattipeme</h3>
                     <p class="text-gray-600 text-center">Sekretaris</p>
                 </div>
 
                 <!-- Kaur Keuangan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Urusan Keuangan" class="w-90 h-82 object-cover rounded-full mb-4">
+                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Urusan Keuangan" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Eunike Pattipeme, SE</h3>
                     <p class="text-gray-600 text-center">Kepala Urusan Keuangan</p>
                 </div>
 
                 <!-- Kaur Umum -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Urusan Umum" class="w-90 h-82 object-cover rounded-full mb-4">
+                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Urusan Umum" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">George Pattipeme, S.IP</h3>
                     <p class="text-gray-600 text-center">Kepala Urusan Umum</p>
                 </div>
 
                 <!-- Kaur Perencanaan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Perencanaan dan Pembangunan" class="w-90 h-82 object-cover rounded-full mb-4">
+                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Perencanaan dan Pembangunan" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Dody P. Doleng, S.IP</h3>
                     <p class="text-gray-600 text-center">Kepala Perencanaan dan Pembangunan</p>
                 </div>
 
                 <!-- Kasi Pemerintahan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Seksi Pemerintahan" class="w-90 h-82 object-cover rounded-full mb-4">
+                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Seksi Pemerintahan" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Christofel Rollo, S.IP</h3>
                     <p class="text-gray-600 text-center">Kepala Seksi Pemerintahan</p>
                 </div>
 
                 <!-- Kasi Kesejahteraan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Seksi Kesejahteraan Masyarakat" class="w-90 h-82 object-cover rounded-full mb-4">
+                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Seksi Kesejahteraan Masyarakat" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Nelly P. Rumanasen</h3>
                     <p class="text-gray-600 text-center">Kepala Seksi Kesejahteraan Masyarakat</p>
                 </div>
 
                 <!-- Kasi Pelayanan -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Kepala Seksi Pelayanan" class="w-90 h-82 object-cover rounded-full mb-4">
+                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Seksi Pelayanan" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Denisius Rollo</h3>
                     <p class="text-gray-600 text-center">Kepala Seksi Pelayanan</p>
                 </div>
 
                 <!-- Ketua RW I -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Ketua RW I" class="w-90 h-82 object-cover rounded-full mb-4">
+                    <img loading="lazy" src="/images/contoh.png" alt="Ketua RW I" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Yehuda Pattipeme</h3>
                     <p class="text-gray-600 text-center">Ketua RW I</p>
                 </div>
 
                 <!-- Ketua RW II -->
                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img src="/images/contoh.png" alt="Ketua RW II" class="w-90 h-82 object-cover rounded-full mb-4">
+                    <img loading="lazy" src="/images/contoh.png" alt="Ketua RW II" class="w-90 h-82 object-cover rounded-full mb-4">
                     <h3 class="text-lg font-bold text-green-700 mb-1">Yunita Ramela</h3>
                     <p class="text-gray-600 text-center">Ketua RW II</p>
                 </div>
@@ -188,22 +188,22 @@
             <div class="grid md:grid-cols-4 gap-8 text-center">
                 <div class="bg-green-50 rounded-xl shadow-lg p-6">
                     <h3 class="text-lg font-bold text-green-700 mb-2">Jumlah Penduduk</h3>
-                    <p class="text-3xl font-bold text-gray-900">185</p>
+                    <p class="text-3xl font-bold text-gray-900">{{ number_format($totalPendudukHome ?? 0) }}</p>
                     <p class="text-gray-600">Jiwa</p>
                 </div>
                 <div class="bg-green-50 rounded-xl shadow-lg p-6">
                     <h3 class="text-lg font-bold text-green-700 mb-2">Kepala Keluarga</h3>
-                    <p class="text-3xl font-bold text-gray-900">185</p>
+                    <p class="text-3xl font-bold text-gray-900">{{ isset($kepalaKeluargaHome) ? number_format($kepalaKeluargaHome) : '-' }}</p>
                     <p class="text-gray-600">KK</p>
                 </div>
                 <div class="bg-green-50 rounded-xl shadow-lg p-6">
                     <h3 class="text-lg font-bold text-green-700 mb-2">Laki-laki</h3>
-                    <p class="text-3xl font-bold text-gray-900">339</p>
+                    <p class="text-3xl font-bold text-gray-900">{{ isset($lakiHome) ? number_format($lakiHome) : '-' }}</p>
                     <p class="text-gray-600">Jiwa</p>
                 </div>
                 <div class="bg-green-50 rounded-xl shadow-lg p-6">
                     <h3 class="text-lg font-bold text-green-700 mb-2">Perempuan</h3>
-                    <p class="text-3xl font-bold text-gray-900">363</p>
+                    <p class="text-3xl font-bold text-gray-900">{{ isset($perempuanHome) ? number_format($perempuanHome) : '-' }}</p>
                     <p class="text-gray-600">Jiwa</p>
                 </div>
             </div>
@@ -250,26 +250,24 @@
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Galeri Kampung</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="/images/2.png" alt="Galeri 1" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-300">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <p class="text-white text-lg font-medium">Pemandangan Alam</p>
-                    </div>
+            @if($featuredGallery->count() === 0)
+                <div class="text-center text-gray-600">Belum ada galeri aktif.</div>
+            @else
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    @foreach($featuredGallery as $gallery)
+                        <div class="relative group overflow-hidden rounded-lg">
+                            @if($gallery->image_path)
+                                <img loading="lazy" src="{{ Storage::disk('public')->url($gallery->image_path) }}" alt="{{ e($gallery->title) }}" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-300">
+                            @else
+                                <div class="w-full h-64 bg-gray-200 flex items-center justify-center">Gambar</div>
+                            @endif
+                            <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <p class="text-white text-lg font-medium">{{ e($gallery->title ?? 'Galeri') }}</p>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="/images/3.png" alt="Galeri 2" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-300">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <p class="text-white text-lg font-medium">Budaya Tradisional</p>
-                    </div>
-                </div>
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="/images/4.png" alt="Galeri 3" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-300">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <p class="text-white text-lg font-medium">Kegiatan Masyarakat</p>
-                    </div>
-                </div>
-            </div>
+            @endif
             <div class="text-center mt-8">
                 <a href="/galeri" class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300">
                     Lihat Semua Galeri
@@ -282,49 +280,34 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Berita Terkini</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Berita Card 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group">
-                    <div class="relative overflow-hidden">
-                        <img src="/images/1.png" alt="Berita 1" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Pembangunan Infrastruktur di Kampung Skouw Yambe</h3>
-                        <p class="text-black mb-4">Pemerintah setempat melakukan pembangunan infrastruktur untuk meningkatkan kualitas hidup warga.</p>
-                        <a href="https://www.papua.go.id/view-detail-berita-123/pembangunan-infrastruktur-di-kampung-skouw-yambe" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 text-white hover:bg-green-700 h-10 px-4 py-2 w-full border-2 border-green-600 hover:border-green-700 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
-                            Baca Selengkapnya
-                        </a>
-                    </div>
+            @if($latestArticles->count() === 0)
+                <div class="text-center text-gray-600">Belum ada berita.</div>
+            @else
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @foreach($latestArticles as $article)
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group">
+                            <div class="relative overflow-hidden">
+                                @if($article->featured_image)
+                                    <a href="{{ route('berita.detail', $article->slug) }}">
+                                        <img loading="lazy" src="{{ Storage::disk('public')->url($article->featured_image) }}" alt="{{ e($article->title) }}" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                    </a>
+                                @endif
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                                    <a href="{{ route('berita.detail', $article->slug) }}">{{ e($article->title) }}</a>
+                                </h3>
+                                @if($article->excerpt)
+                                    <p class="text-black mb-4">{{ \Illuminate\Support\Str::limit($article->excerpt, 120) }}</p>
+                                @endif
+                                <a href="{{ route('berita.detail', $article->slug) }}" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 text-white hover:bg-green-700 h-10 px-4 py-2 w-full border-2 border-green-600 hover:border-green-700 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                    Baca Selengkapnya
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-
-                <!-- Berita Card 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group">
-                    <div class="relative overflow-hidden">
-                        <img src="/images/2.png" alt="Berita 2" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Festival Budaya Kampung Skouw Yambe</h3>
-                        <p class="text-black mb-4">Festival budaya tahunan kembali digelar untuk melestarikan warisan budaya lokal.</p>
-                        <a href="https://www.papua.go.id/view-detail-berita-124/festival-budaya-kampung-skouw-yambe" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 text-white hover:bg-green-700 h-10 px-4 py-2 w-full border-2 border-green-600 hover:border-green-700 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
-                            Baca Selengkapnya
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Berita Card 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group">
-                    <div class="relative overflow-hidden">
-                        <img src="/images/3.png" alt="Berita 3" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Program Pemberdayaan Masyarakat</h3>
-                        <p class="text-black mb-4">Program pemberdayaan masyarakat untuk meningkatkan ekonomi warga kampung.</p>
-                        <a href="https://www.papua.go.id/view-detail-berita-125/program-pemberdayaan-masyarakat-kampung-skouw-yambe" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 text-white hover:bg-green-700 h-10 px-4 py-2 w-full border-2 border-green-600 hover:border-green-700 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
-                            Baca Selengkapnya
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @endif
         </div>
     </section>
 

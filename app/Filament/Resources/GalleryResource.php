@@ -37,7 +37,15 @@ class GalleryResource extends Resource
                 Forms\Components\FileUpload::make('image_path')
                     ->label('Gambar')
                     ->image()
+                    ->disk('public')
                     ->directory('gallery')
+                    ->maxSize(2048)
+                    ->imageEditor()
+                    ->imageResizeMode('contain')
+                    ->imageResizeTargetWidth(1600)
+                    ->imageResizeTargetHeight(1200)
+                    ->imageResizeUpscale(false)
+                    ->imagePreviewHeight('250')
                     ->required(),
                 Forms\Components\TextInput::make('category')
                     ->label('Kategori'),

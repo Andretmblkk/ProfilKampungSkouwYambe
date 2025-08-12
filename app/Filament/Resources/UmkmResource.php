@@ -52,7 +52,15 @@ class UmkmResource extends Resource
                 Forms\Components\FileUpload::make('image_path')
                     ->label('Foto UMKM')
                     ->image()
-                    ->directory('umkm'),
+                    ->disk('public')
+                    ->directory('umkm')
+                    ->maxSize(1536)
+                    ->imageEditor()
+                    ->imageResizeMode('cover')
+                    ->imageResizeTargetWidth(1024)
+                    ->imageResizeTargetHeight(768)
+                    ->imageResizeUpscale(false)
+                    ->imagePreviewHeight('200'),
                 Forms\Components\Toggle::make('is_active')
                     ->label('Aktif')
                     ->default(true)

@@ -11,57 +11,13 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Data dummy
-    const totalPenduduk = 800;
-    // Umur
-    const umurData = [60, 180, 350, 150, 60];
-    const umurLabel = ['0-5', '6-17', '18-40', '41-60', '60+'];
-    const umurPersen = umurData.map(x => Math.round(x/totalPenduduk*100));
-    new Chart(document.getElementById('umurChart'), {
-        type: 'bar',
-        data: {
-            labels: umurLabel,
-            datasets: [{
-                label: 'Jiwa',
-                data: umurData,
-                backgroundColor: 'rgba(34, 197, 94, 0.8)',
-                borderColor: 'rgba(34, 197, 94, 1)',
-                borderWidth: 2,
-                borderRadius: 8,
-                hoverBackgroundColor: 'rgba(34, 197, 94, 1)'
-            }]
-        },
-        options: {
-            responsive: true, 
-            plugins: {
-                legend: {display: false},
-                tooltip: {
-                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                    titleColor: 'white',
-                    bodyColor: 'white',
-                    borderColor: '#22c55e',
-                    borderWidth: 1
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    grid: {
-                        color: 'rgba(0, 0, 0, 0.1)'
-                    }
-                },
-                x: {
-                    grid: {
-                        display: false
-                    }
-                }
-            }
-        }
-    });
+    // Data dari database (Filament)
+    const totalPenduduk = {{ $totalPenduduk ?? 0 }};
+    // Bagian chart umur dihapus
     // Perkawinan
-    const kawinData = [200, 550, 50];
-    const kawinLabel = ['Belum Kawin', 'Kawin', 'Cerai'];
-    const kawinPersen = kawinData.map(x => Math.round(x/totalPenduduk*100));
+    const kawinData = @json($kawinValues ?? []);
+    const kawinLabel = @json($kawinLabels ?? []);
+    const kawinPersen = kawinData.map(x => Math.round((x / Math.max(totalPenduduk, 1)) * 100));
     new Chart(document.getElementById('perkawinanChart'), {
         type: 'doughnut',
         data: {
@@ -86,9 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     // Pekerjaan
-    const kerjaData = [300, 100, 200, 200];
-    const kerjaLabel = ['Petani', 'Nelayan', 'UMKM', 'Lainnya'];
-    const kerjaPersen = kerjaData.map(x => Math.round(x/totalPenduduk*100));
+    const kerjaData = @json($kerjaValues ?? []);
+    const kerjaLabel = @json($kerjaLabels ?? []);
+    const kerjaPersen = kerjaData.map(x => Math.round((x / Math.max(totalPenduduk, 1)) * 100));
     new Chart(document.getElementById('pekerjaanChart'), {
         type: 'polarArea',
         data: {
@@ -123,9 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     // Pendidikan
-    const pendidikanData = [200, 150, 100, 50, 300];
-    const pendidikanLabel = ['SD', 'SMP', 'SMA', 'D3/S1', 'Tidak Sekolah'];
-    const pendidikanPersen = pendidikanData.map(x => Math.round(x/totalPenduduk*100));
+    const pendidikanData = @json($pendidikanValues ?? []);
+    const pendidikanLabel = @json($pendidikanLabels ?? []);
+    const pendidikanPersen = pendidikanData.map(x => Math.round((x / Math.max(totalPenduduk, 1)) * 100));
     new Chart(document.getElementById('pendidikanChart'), {
         type: 'bar',
         data: {
@@ -168,9 +124,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     // Agama
-    const agamaData = [600, 100, 80, 20];
-    const agamaLabel = ['Kristen', 'Katolik', 'Islam', 'Lainnya'];
-    const agamaPersen = agamaData.map(x => Math.round(x/totalPenduduk*100));
+    const agamaData = @json($agamaValues ?? []);
+    const agamaLabel = @json($agamaLabels ?? []);
+    const agamaPersen = agamaData.map(x => Math.round((x / Math.max(totalPenduduk, 1)) * 100));
     new Chart(document.getElementById('agamaChart'), {
         type: 'pie',
         data: {
@@ -202,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         document.getElementById(id).innerHTML = html;
     }
-    setPersen('umurPersen', umurPersen, umurLabel);
+    // setPersen untuk umur dihapus
     setPersen('kawinPersen', kawinPersen, kawinLabel);
     setPersen('kerjaPersen', kerjaPersen, kerjaLabel);
     setPersen('pendidikanPersen', pendidikanPersen, pendidikanLabel);
@@ -355,6 +311,40 @@ document.addEventListener('DOMContentLoaded', function() {
     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     color: white;
 }
+
+/* Chart layout helpers */
+.chart-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.chart-container {
+    position: relative;
+    height: 300px;
+}
+
+/* KPI modern cards */
+.kpi-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    color: #fff;
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,.25);
+    isolation: isolate;
+}
+.kpi-card .kpi-inner { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: center; }
+.kpi-card .icon-wrap { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 9999px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.25); backdrop-filter: blur(6px); }
+.kpi-card .label { font-weight: 700; letter-spacing: .2px; opacity: .95; margin-bottom: .25rem; }
+.kpi-card .value { font-size: 2.75rem; font-weight: 800; line-height: 1; margin-bottom: .25rem; }
+.kpi-card .unit { opacity: .9; font-size: .95rem; }
+.kpi-card .glow {
+    content: ""; position: absolute; inset: auto -20% -40% auto; width: 60%; height: 200%;
+    background: radial-gradient(ellipse at top left, rgba(255,255,255,.35), transparent 60%);
+    filter: blur(40px); z-index: -1;
+}
+.kpi-card.green { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); }
+.kpi-card.blue { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
 </style>
 @endsection
 
@@ -399,102 +389,99 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="stat-card rounded-2xl shadow-xl p-8 flex flex-col items-center card-hover">
-                    <div class="bg-white bg-opacity-20 rounded-full p-4 mb-4">
-                        <i class="fas fa-users text-4xl"></i>
+                <div class="kpi-card green card-hover">
+                    <span class="glow"></span>
+                    <div class="kpi-inner">
+                        <div class="icon-wrap">
+                            <i class="fas fa-user-friends text-3xl"></i>
+                        </div>
+                        <div>
+                            <div class="label">Jumlah Penduduk</div>
+                            <div class="value">{{ number_format($totalPenduduk ?? 0) }}</div>
+                            <div class="unit">Jiwa</div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Jumlah Penduduk</h3>
-                    <p class="text-5xl font-bold mb-2">800</p>
-                    <p class="text-lg opacity-90">Jiwa</p>
                 </div>
-                <div class="stat-card-alt rounded-2xl shadow-xl p-8 flex flex-col items-center card-hover">
-                    <div class="bg-white bg-opacity-20 rounded-full p-4 mb-4">
-                        <i class="fas fa-home text-4xl"></i>
-                </div>
-                    <h3 class="text-xl font-bold mb-2">Kepala Keluarga</h3>
-                    <p class="text-5xl font-bold mb-2">200</p>
-                    <p class="text-lg opacity-90">KK</p>
+                <div class="kpi-card blue card-hover">
+                    <span class="glow"></span>
+                    <div class="kpi-inner">
+                        <div class="icon-wrap">
+                            <i class="fas fa-user-tie text-3xl"></i>
+                        </div>
+                        <div>
+                            <div class="label">Kepala Keluarga</div>
+                            <div class="value">{{ isset($kepalaKeluarga) ? number_format($kepalaKeluarga) : '-' }}</div>
+                            <div class="unit">KK</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Charts Grid -->
-            <div class="grid lg:grid-cols-2 gap-8 mb-8">
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-green-100 rounded-full p-3 mr-4">
-                            <i class="fas fa-chart-bar text-green-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-green-700">Berdasarkan Umur</h3>
-                    </div>
-                    <canvas id="umurChart" height="200"></canvas>
-                    <div id="umurPersen" class="mt-6"></div>
-                    <p class="text-gray-600 mt-4 p-4 bg-gray-50 rounded-lg">
-                        <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                        Mayoritas penduduk berusia produktif (18-40 tahun), yaitu <span class="font-bold text-green-600">{{ round(350/800*100) }}%</span> dari total penduduk.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
+            <div class="grid md:grid-cols-2 gap-12 mb-12 items-stretch">
+                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll chart-card">
                     <div class="flex items-center mb-6">
                         <div class="bg-blue-100 rounded-full p-3 mr-4">
                             <i class="fas fa-ring text-blue-600 text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-blue-700">Status Perkawinan</h3>
                 </div>
-                    <canvas id="perkawinanChart" height="200"></canvas>
+                    <div class="chart-container">
+                        <canvas id="perkawinanChart"></canvas>
+                    </div>
                     <div id="kawinPersen" class="mt-6"></div>
                     <p class="text-gray-600 mt-4 p-4 bg-gray-50 rounded-lg">
                         <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                        Sebagian besar penduduk sudah menikah (<span class="font-bold text-blue-600">{{ round(550/800*100) }}%</span>).
+                        Sebagian besar penduduk sudah menikah, jumlah <span class="font-bold text-blue-600">{{ $jumlahKawin !== null ? number_format($jumlahKawin) : '-' }}</span> jiwa.
                     </p>
                 </div>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8 mb-8">
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
+                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll chart-card">
                     <div class="flex items-center mb-6">
                         <div class="bg-orange-100 rounded-full p-3 mr-4">
                             <i class="fas fa-tractor text-orange-600 text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-orange-700">Pekerjaan</h3>
                     </div>
-                    <canvas id="pekerjaanChart" height="200"></canvas>
+                    <div class="chart-container">
+                        <canvas id="pekerjaanChart"></canvas>
+                    </div>
                     <div id="kerjaPersen" class="mt-6"></div>
                     <p class="text-gray-600 mt-4 p-4 bg-gray-50 rounded-lg">
                         <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                        Sebagian besar bekerja sebagai petani (<span class="font-bold text-orange-600">{{ round(300/800*100) }}%</span>).
+                        Sebagian besar bekerja sebagai petani, jumlah <span class="font-bold text-orange-600">{{ $jumlahPetani !== null ? number_format($jumlahPetani) : '-' }}</span> jiwa.
                     </p>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
+                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll chart-card">
                     <div class="flex items-center mb-6">
                         <div class="bg-indigo-100 rounded-full p-3 mr-4">
                             <i class="fas fa-graduation-cap text-indigo-600 text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-indigo-700">Tingkat Pendidikan</h3>
                 </div>
-                    <canvas id="pendidikanChart" height="200"></canvas>
+                    <div class="chart-container">
+                        <canvas id="pendidikanChart"></canvas>
+                    </div>
                     <div id="pendidikanPersen" class="mt-6"></div>
                     <p class="text-gray-600 mt-4 p-4 bg-gray-50 rounded-lg">
                         <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                        Sebagian besar lulusan SD dan SMP, masih banyak yang belum sekolah (<span class="font-bold text-indigo-600">{{ round(300/800*100) }}%</span>).
+                        Sebagian besar lulusan SD dan SMP, yang belum sekolah berjumlah <span class="font-bold text-indigo-600">{{ $jumlahTidakSekolah !== null ? number_format($jumlahTidakSekolah) : '-' }}</span> jiwa.
                     </p>
                 </div>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8 mb-8">
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
+                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll chart-card">
                     <div class="flex items-center mb-6">
                         <div class="bg-purple-100 rounded-full p-3 mr-4">
                             <i class="fas fa-church text-purple-600 text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-purple-700">Agama</h3>
                     </div>
-                    <canvas id="agamaChart" height="200"></canvas>
+                    <div class="chart-container">
+                        <canvas id="agamaChart"></canvas>
+                    </div>
                     <div id="agamaPersen" class="mt-6"></div>
                     <p class="text-gray-600 mt-4 p-4 bg-gray-50 rounded-lg">
                         <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                        Mayoritas Kristen (<span class="font-bold text-purple-600">{{ round(600/800*100) }}%</span>), ada Katolik, Islam, dan lainnya.
+                        Mayoritas Kristen dengan jumlah <span class="font-bold text-purple-600">{{ $jumlahKristen !== null ? number_format($jumlahKristen) : '-' }}</span> jiwa.
                     </p>
                 </div>
             </div>

@@ -1,0 +1,46 @@
+/* Filament Admin Custom Theme */
+@reference "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-50: 240 253 244;
+  --primary-100: 220 252 231;
+  --primary-200: 187 247 208;
+  --primary-300: 134 239 172;
+  --primary-400: 74 222 128;
+  --primary-500: 34 197 94;
+  --primary-600: 22 163 74;
+  --primary-700: 21 128 61;
+  --primary-800: 22 101 52;
+  --primary-900: 20 83 45;
+}
+
+.fi-body {
+  @apply bg-gradient-to-br from-green-50 via-white to-blue-50 min-h-screen;
+}
+
+.fi-login {
+  @apply bg-gradient-to-br from-green-50 via-white to-blue-50;
+}
+
+.fi-login .fi-logo { @apply h-16 w-16 rounded-full shadow-md ring-1 ring-white/50 p-2 bg-white/80 backdrop-blur object-contain; }
+
+.fi-login .fi-card {
+  @apply rounded-2xl shadow-xl border-0 bg-white/85 backdrop-blur;
+}
+
+.fi-topbar nav {
+  @apply bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/40;
+}
+
+.fi-sidebar {
+  @apply bg-white/80 backdrop-blur;
+}
+
+.fi-section-content {
+  @apply rounded-xl shadow-sm bg-white/90;
+}
+
+

@@ -28,10 +28,12 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Blue,
+                'primary' => Color::Green,
             ])
-            ->brandName('Admin Panel Kampung Skouw Yambe')
+            ->brandName('Panel Administrasi Kampung Skouw Yambe')
+            ->brandLogo(asset('images/logo.png'))
             ->favicon(asset('favicon.ico'))
+            ->viteTheme('resources/css/filament/admin/theme.css') // pakai Vite
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([

@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const colors = require('tailwindcss/colors');
+
+module.exports = {
   darkMode: ["class"],
   content: [
     './pages/**/*.{js,jsx}',
@@ -7,6 +9,7 @@ export default {
     './app/**/*.{js,jsx}',
     './src/**/*.{js,jsx}',
     './resources/**/*.{js,jsx,blade.php}',
+    './vendor/filament/**/*.blade.php', 
   ],
   safelist: [
     'bg-white',
@@ -15,7 +18,10 @@ export default {
     'text-white',
     'border',
     'border-gray-200',
-    'border-gray-800'
+    'border-gray-800',
+    'from-green-50', 
+    'via-white',
+    'to-blue-50',
   ],
   theme: {
     container: {
@@ -27,6 +33,7 @@ export default {
     },
     extend: {
       colors: {
+        ...colors, 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -82,5 +89,7 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} 
+  plugins: [
+    require("tailwindcss-animate"),
+  ],
+};
