@@ -253,22 +253,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 Korano (Kepala Kampung)
                 </h3>
                 <div class="overflow-x-auto">
-                <table class="min-w-full text-left text-gray-700 mb-6 rounded-lg shadow border">
-                    <thead>
-                    <tr class="bg-slate-50">
-                        <th class="py-2 px-4 font-semibold">Nama</th>
-                        <th class="py-2 px-4 font-semibold">Periode</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr><td class="py-2 px-4">Yakob Patipeme</td><td class="py-2 px-4">1945-1947</td></tr>
-                    <tr><td class="py-2 px-4">Wellem Rollo</td><td class="py-2 px-4">1947-1956</td></tr>
-                    <tr><td class="py-2 px-4">Herman Rollo</td><td class="py-2 px-4">1956-1965</td></tr>
-                    <tr><td class="py-2 px-4">Markus Pattipeme</td><td class="py-2 px-4">1965-1976</td></tr>
-                    <tr><td class="py-2 px-4">Marinus Rollo</td><td class="py-2 px-4">1976-1968</td></tr>
-                    <tr><td class="py-2 px-4">Dominggus Foa</td><td class="py-2 px-4">1968-1972</td></tr>
-                    </tbody>
-                </table>
+                <div class="flex flex-col items-center">
+                    <table class="min-w-full text-left text-gray-700 mb-6 rounded-lg shadow border" style="max-width: 400px;">
+                        <thead>
+                        <tr class="bg-slate-50">
+                            <th class="py-2 px-4 font-semibold">Nama</th>
+                            <th class="py-2 px-4 font-semibold">Periode</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td class="py-2 px-4">Yakob Patipeme</td><td class="py-2 px-4">1945-1947</td></tr>
+                        <tr><td class="py-2 px-4">Wellem Rollo</td><td class="py-2 px-4">1947-1956</td></tr>
+                        <tr><td class="py-2 px-4">Herman Rollo</td><td class="py-2 px-4">1956-1965</td></tr>
+                        <tr><td class="py-2 px-4">Markus Pattipeme</td><td class="py-2 px-4">1965-1976</td></tr>
+                        <tr><td class="py-2 px-4">Marinus Rollo</td><td class="py-2 px-4">1976-1968</td></tr>
+                        <tr><td class="py-2 px-4">Dominggus Foa</td><td class="py-2 px-4">1968-1972</td></tr>
+                        </tbody>
+                    </table>
+                </div>
                 </div>
                 <h3 class="text-2xl font-bold text-slate-700 mb-4 flex items-center justify-center gap-2">
                 <i class="fas fa-star text-slate-600 icon-bounce"></i>
@@ -327,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p class="text-gray-600 mt-2">Hierarki kepemimpinan dan organisasi kampung</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-8">
+            <div class="grid lg:grid-cols-6 gap-8">
                 <!-- Struktur Pemerintahan Kampung -->
                 <div class="text-center animate-slide-left">
                     <h3 class="text-2xl font-bold text-slate-700 mb-6">
@@ -341,18 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
 
-                <!-- Struktur Pengurus Adat -->
-                <div class="text-center animate-slide-right">
-                    <h3 class="text-2xl font-bold text-slate-700 mb-6">
-                        <i class="fas fa-users mr-2 text-slate-600 icon-bounce"></i>
-                        Pengurus Adat
-                    </h3>
-                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 card-hover">
-                        <img src="/images/struktur.jpg" alt="Struktur Pengurus Adat Kampung" 
-                             class="w-full h-auto rounded-xl shadow-lg hover:scale-110 transition-transform duration-500">
-                        <p class="text-gray-600 mt-4 text-sm">Struktur pengurus adat yang menjaga tradisi dan kearifan lokal kampung</p>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </div>

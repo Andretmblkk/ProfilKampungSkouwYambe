@@ -30,9 +30,12 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Green,
             ])
-            ->brandName('Panel Administrasi Kampung Skouw Yambe')
+            ->brandName('Panel Admin Kampung Skouw Yambe')
             ->brandLogo(asset('images/logo.png'))
+            ->brandLogoHeight('2.5rem')
             ->favicon(asset('favicon.ico'))
+            ->topNavigation()
+            ->sidebarCollapsibleOnDesktop()
            
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')

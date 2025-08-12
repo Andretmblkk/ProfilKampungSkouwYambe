@@ -7,8 +7,8 @@
     <div class="max-w-md w-full space-y-8 bg-white rounded-xl shadow-lg p-10">
         <div class="flex flex-col items-center">
             <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-20 mb-4">
-            <h2 class="mt-2 text-center text-3xl font-extrabold text-gray-900">Login Captive Portal</h2>
-            <p class="mt-2 text-center text-sm text-gray-600">Silakan login untuk mengakses internet</p>
+            <h2 class="mt-2 text-center text-3xl font-extrabold text-gray-900">Login Admin</h2>
+            <p class="mt-2 text-center text-sm text-gray-600">Silakan login untuk mengakses panel admin</p>
         </div>
         <form class="mt-8 space-y-6" action="#" method="POST">
             @csrf
