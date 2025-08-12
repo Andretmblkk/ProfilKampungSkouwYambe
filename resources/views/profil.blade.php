@@ -329,21 +329,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p class="text-gray-600 mt-2">Hierarki kepemimpinan dan organisasi kampung</p>
             </div>
 
-            <div class="grid lg:grid-cols-6 gap-8">
+            <div class="flex justify-center">
                 <!-- Struktur Pemerintahan Kampung -->
-                <div class="text-center animate-slide-left">
+                <div class="text-center animate-slide-left max-w-4xl">
                     <h3 class="text-2xl font-bold text-slate-700 mb-6">
                         <i class="fas fa-building mr-2 text-slate-600 icon-bounce"></i>
                         Pemerintahan Kampung
                     </h3>
                     <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-6 card-hover">
                         <img src="/images/struktur.jpg" alt="Struktur Organisasi Pemerintahan Kampung" 
-                             class="w-full h-auto rounded-xl shadow-lg hover:scale-110 transition-transform duration-500">
+                             class="w-[700px] h-auto rounded-xl shadow-lg hover:scale-110 transition-transform duration-500 mx-auto">
                         <p class="text-gray-600 mt-4 text-sm">Struktur organisasi pemerintahan kampung yang mengatur administrasi dan pelayanan publik</p>
                     </div>
                 </div>
-
-               
             </div>
         </div>
     </div>
