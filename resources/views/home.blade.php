@@ -56,27 +56,79 @@
 @endsection
 
 @section('content')
-    <!-- Hero Section -->
-    <div class="relative h-screen" id="hero">
-        <div class="absolute inset-0">
+    <!-- Hero Carousel -->
+<div class="relative h-screen overflow-hidden" id="hero">
+    <!-- Carousel Wrapper -->
+    <div class="absolute inset-0 flex transition-transform duration-700 ease-in-out" id="carousel-wrapper">
+        <!-- Slide 1 -->
+        <div class="relative w-full flex-shrink-0">
             <img loading="lazy" src="{{ asset('images/1.jpg') }}" alt="Kampung Skouw Yambe" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
-        <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-            <div class="text-white w-full">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">
-                    Selamat Datang di Website Resmi Kampung Skouw Yambe, Kecamatan Muara Tami, Kota Jayapura, Papua
-                </h1>
-                <p class="text-base md:text-lg mb-6 max-w-2xl mx-auto text-center">
-                    Kampung Skouw Yambe adalah salah satu kampung di Kecamatan Muara Tami, Kota Jayapura, Papua. Kampung ini dikenal dengan keindahan alam, kekayaan budaya, dan potensi UMKM yang berkembang. Masyarakatnya hidup rukun, menjaga tradisi, dan aktif dalam berbagai kegiatan pembangunan kampung. Website ini menjadi pusat informasi resmi, berita, dan layanan digital untuk seluruh warga dan pengunjung Kampung Skouw Yambe.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4 mb-8">
-                    <a href="#jelajahi" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-md transition-colors duration-300">Jelajahi Desa</a>
-                   
-                </div>
+        <!-- Slide 2 -->
+        <div class="relative w-full flex-shrink-0">
+            <img loading="lazy" src="{{ asset('images/2.jpg') }}" alt="Kampung Skouw Yambe 2" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="relative w-full flex-shrink-0">
+            <img loading="lazy" src="{{ asset('images/3.jpg') }}" alt="Kampung Skouw Yambe 3" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+    </div>
+
+    <!-- Hero Text -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center">
+        <div class="text-white w-full text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                Selamat Datang di Website Resmi Kampung Skouw Yambe, Kecamatan Muara Tami, Kota Jayapura, Papua
+            </h1>
+            <p class="text-base md:text-lg mb-6 max-w-2xl mx-auto">
+                Kampung Skouw Yambe adalah salah satu kampung di Kecamatan Muara Tami, Kota Jayapura, Papua. Kampung ini dikenal dengan keindahan alam, kekayaan budaya, dan potensi UMKM yang berkembang.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#jelajahi" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-md transition-colors duration-300">
+                    Jelajahi Desa
+                </a>
             </div>
         </div>
     </div>
+
+    <!-- Navigation Buttons -->
+    <button id="prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60">
+        &#10094;
+    </button>
+    <button id="next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60">
+        &#10095;
+    </button>
+</div>
+
+<script>
+    const wrapper = document.getElementById('carousel-wrapper');
+    const totalSlides = wrapper.children.length;
+    let index = 0;
+
+    function showSlide(i) {
+        wrapper.style.transform = `translateX(-${i * 100}%)`;
+    }
+
+    document.getElementById('next').addEventListener('click', () => {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        index = (index - 1 + totalSlides) % totalSlides;
+        showSlide(index);
+    });
+
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+    }, 5000);
+</script>
+
 
   
 
