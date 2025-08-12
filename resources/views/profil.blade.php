@@ -224,99 +224,96 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Sejarah Kampung Section -->
         <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 card-hover animate-on-scroll">
             <div class="text-center mb-8">
-                <div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
-                    <i class="fas fa-history text-slate-600 text-3xl icon-bounce"></i>
-                </div>
-                <h2 class="text-3xl font-bold text-slate-700">Sejarah Kampung</h2>
-                <p class="text-gray-600 mt-2">Perjalanan panjang kampung dari masa lalu hingga sekarang</p>
+            <div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+                <i class="fas fa-history text-slate-600 text-3xl icon-bounce"></i>
             </div>
-
+            <h2 class="text-3xl font-bold text-slate-700">Sejarah Kampung</h2>
+            <p class="text-gray-600 mt-2">Perjalanan panjang kampung dari masa lalu hingga sekarang</p>
+            </div>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="animate-slide-left">
-                    <h3 class="text-2xl font-bold text-slate-700 mb-4">
-                        <i class="fas fa-clock mr-2 text-slate-600 icon-bounce"></i>
-                        Asal Usul Nama
-                    </h3>
-                    <p class="text-gray-700 leading-relaxed mb-6">
-                        Nama "Skouw Yambe" berasal dari bahasa lokal yang memiliki makna mendalam. 
-                        "Skouw" berarti tempat yang tinggi atau bukit, sementara "Yambe" merujuk pada 
-                        jenis pohon yang banyak tumbuh di wilayah tersebut. Kombinasi kedua kata ini 
-                        menggambarkan karakteristik geografis kampung yang berada di dataran tinggi 
-                        dengan pepohonan yang rimbun.
-                    </p>
-                    
-                    <h3 class="text-2xl font-bold text-slate-700 mb-4">
-                        <i class="fas fa-users mr-2 text-slate-600 icon-bounce"></i>
-                        Masyarakat Pertama
-                    </h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Kampung ini pertama kali dihuni oleh suku asli Papua yang hidup secara tradisional 
-                        dengan mengandalkan hasil alam, berburu, dan bercocok tanam. Mereka membangun 
-                        rumah adat dan mengembangkan sistem sosial yang berdasarkan kekerabatan dan 
-                        gotong royong.
-                    </p>
+            <!-- Asal Usul Kampung -->
+            <div class="animate-slide-left">
+                <h3 class="text-2xl font-bold text-slate-700 mb-4 flex items-center justify-center gap-2">
+                <i class="fas fa-clock text-slate-600 icon-bounce"></i>
+                Asal Usul Kampung
+                </h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
+                <li>Pada awalnya, pesisir Skouw hanya terdapat 2 kampung: <span class="font-semibold">TETANGPE</span> di barat dan <span class="font-semibold">TEHUPA</span> di timur.</li>
+                <li>Di selatan berdiam suku Rollo (Teleti).</li>
+                <li>Pertemuan antara Kepala Suku Patipeme dan Rollo membentuk kampung pertama bernama <span class="font-semibold">BAME</span> (kampung).</li>
+                <li>Suku Membilong dari PNG, Ramela dan Paew dari Holtekamp bergabung, membentuk kampung <span class="font-semibold">TETANGPE</span> ("Mereka makan bebas di atas tanah hak ulayat mereka").</li>
+                <li>Periode kekuasaan adat berlangsung dari abad XVII hingga 1945, dipimpin oleh Kepala-Kepala Suku.</li>
+                <li>Setelah Perang Dunia II, pemerintahan definitif dipimpin oleh seorang <span class="font-semibold">Korano</span> (Kepala Kampung).</li>
+                </ul>
+            </div>
+            <!-- Korano & Pemerintahan -->
+            <div class="animate-slide-right">
+                <h3 class="text-2xl font-bold text-slate-700 mb-4 flex items-center justify-center gap-2">
+                <i class="fas fa-calendar-alt text-slate-600 icon-bounce"></i>
+                Korano (Kepala Kampung)
+                </h3>
+                <div class="overflow-x-auto">
+                <table class="min-w-full text-left text-gray-700 mb-6 rounded-lg shadow border">
+                    <thead>
+                    <tr class="bg-slate-50">
+                        <th class="py-2 px-4 font-semibold">Nama</th>
+                        <th class="py-2 px-4 font-semibold">Periode</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr><td class="py-2 px-4">Yakob Patipeme</td><td class="py-2 px-4">1945-1947</td></tr>
+                    <tr><td class="py-2 px-4">Wellem Rollo</td><td class="py-2 px-4">1947-1956</td></tr>
+                    <tr><td class="py-2 px-4">Herman Rollo</td><td class="py-2 px-4">1956-1965</td></tr>
+                    <tr><td class="py-2 px-4">Markus Pattipeme</td><td class="py-2 px-4">1965-1976</td></tr>
+                    <tr><td class="py-2 px-4">Marinus Rollo</td><td class="py-2 px-4">1976-1968</td></tr>
+                    <tr><td class="py-2 px-4">Dominggus Foa</td><td class="py-2 px-4">1968-1972</td></tr>
+                    </tbody>
+                </table>
                 </div>
-
-                <div class="animate-slide-right">
-                    <h3 class="text-2xl font-bold text-slate-700 mb-4">
-                        <i class="fas fa-calendar-alt mr-2 text-slate-600 icon-bounce"></i>
-                        Perkembangan Zaman
-                    </h3>
-                    <p class="text-gray-700 leading-relaxed mb-6">
-                        Seiring berjalannya waktu, kampung mengalami berbagai perubahan. Dari kehidupan 
-                        tradisional, masyarakat mulai mengenal pendidikan formal, teknologi modern, 
-                        dan pembangunan infrastruktur. Namun, nilai-nilai budaya dan kearifan lokal 
-                        tetap dijaga dan dilestarikan.
-                    </p>
-                    
-                    <h3 class="text-2xl font-bold text-slate-700 mb-4">
-                        <i class="fas fa-star mr-2 text-slate-600 icon-bounce"></i>
-                        Era Modern
-                    </h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Saat ini, Kampung Skouw Yambe telah berkembang menjadi kampung yang modern 
-                        namun tetap mempertahankan identitas budaya. Pembangunan ekonomi, pendidikan, 
-                        dan kesehatan terus ditingkatkan sambil menjaga kelestarian alam dan budaya 
-                        yang menjadi warisan berharga.
-                    </p>
-                </div>
+                <h3 class="text-2xl font-bold text-slate-700 mb-4 flex items-center justify-center gap-2">
+                <i class="fas fa-star text-slate-600 icon-bounce"></i>
+                Transformasi Pemerintahan
+                </h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                Tahun 1972, struktur pemerintahan berubah menjadi Pemerintah Desa yang dipimpin oleh <span class="font-semibold">Melkisedek Rollo</span>.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                Kini, Kampung Skouw Yambe berkembang menjadi kampung modern yang tetap menjaga identitas budaya. Pembangunan ekonomi, pendidikan, dan kesehatan terus ditingkatkan, sambil melestarikan alam dan budaya sebagai warisan berharga.
+                </p>
+            </div>
             </div>
         </div>
 
         <!-- Potensi dan Keunggulan -->
         <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 card-hover animate-on-scroll">
             <div class="text-center mb-8">
-                <div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
-                    <i class="fas fa-gem text-slate-600 text-3xl icon-bounce"></i>
-                </div>
-                <h2 class="text-3xl font-bold text-slate-700">Potensi & Keunggulan</h2>
-                <p class="text-gray-600 mt-2">Kekayaan alam dan budaya yang menjadi kebanggaan kampung</p>
+            <div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+                <i class="fas fa-gem text-slate-600 text-3xl icon-bounce"></i>
             </div>
-
+            <h2 class="text-3xl font-bold text-slate-700">Potensi & Keunggulan</h2>
+            <p class="text-gray-600 mt-2">Kekayaan alam dan budaya yang menjadi kebanggaan kampung</p>
+            </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="text-center p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl card-hover">
-                    <i class="fas fa-umbrella-beach text-slate-600 text-4xl mb-4 icon-bounce floating"></i>
-                    <h3 class="font-bold text-slate-800 mb-2">Pantai Eksotis</h3>
-                    <p class="text-slate-700 text-sm">Pantai berpasir hitam dengan sunset yang memukau</p>
-                </div>
-                
-                <div class="text-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl card-hover">
-                    <i class="fas fa-fish text-gray-600 text-4xl mb-4 icon-bounce floating"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">Konservasi Penyu</h3>
-                    <p class="text-gray-700 text-sm">Program pelestarian penyu yang berkelanjutan</p>
-                </div>
-                
-                <div class="text-center p-6 bg-gradient-to-br from-zinc-50 to-zinc-100 rounded-xl card-hover">
-                    <i class="fas fa-home text-zinc-600 text-4xl mb-4 icon-bounce floating"></i>
-                    <h3 class="font-bold text-zinc-800 mb-2">Budaya Adat</h3>
-                    <p class="text-zinc-700 text-sm">Rumah adat dan tradisi yang masih terjaga</p>
-                </div>
-                
-                <div class="text-center p-6 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl card-hover">
-                    <i class="fas fa-tree text-neutral-600 text-4xl mb-4 icon-bounce floating"></i>
-                    <h3 class="font-bold text-neutral-800 mb-2">Kelapa Organik</h3>
-                    <p class="text-neutral-700 text-sm">Produksi kelapa dan minyak kelapa berkualitas</p>
-                </div>
+            <div class="text-center p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl card-hover flex flex-col items-center">
+                <i class="fas fa-umbrella-beach text-slate-600 text-4xl mb-4 icon-bounce floating"></i>
+                <h3 class="font-bold text-slate-800 mb-2">Pantai Eksotis</h3>
+                <p class="text-slate-700 text-sm">Pantai berpasir hitam dengan sunset yang memukau</p>
+            </div>
+            <div class="text-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl card-hover flex flex-col items-center">
+                <i class="fas fa-fish text-gray-600 text-4xl mb-4 icon-bounce floating"></i>
+                <h3 class="font-bold text-gray-800 mb-2">Konservasi Penyu</h3>
+                <p class="text-gray-700 text-sm">Program pelestarian penyu yang berkelanjutan</p>
+            </div>
+            <div class="text-center p-6 bg-gradient-to-br from-zinc-50 to-zinc-100 rounded-xl card-hover flex flex-col items-center">
+                <i class="fas fa-home text-zinc-600 text-4xl mb-4 icon-bounce floating"></i>
+                <h3 class="font-bold text-zinc-800 mb-2">Budaya Adat</h3>
+                <p class="text-zinc-700 text-sm">Rumah adat dan tradisi yang masih terjaga</p>
+            </div>
+            <div class="text-center p-6 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl card-hover flex flex-col items-center">
+                <i class="fas fa-tree text-neutral-600 text-4xl mb-4 icon-bounce floating"></i>
+                <h3 class="font-bold text-neutral-800 mb-2">Kelapa Organik</h3>
+                <p class="text-neutral-700 text-sm">Produksi kelapa dan minyak kelapa berkualitas</p>
+            </div>
             </div>
         </div>
 

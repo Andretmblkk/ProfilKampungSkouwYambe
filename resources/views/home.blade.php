@@ -3,6 +3,34 @@
 @section('title', 'Beranda')
 
 @section('scripts')
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+    /* CSS untuk memastikan map tidak tertutup navbar */
+    #map {
+        z-index: 1 !important;
+        position: relative !important;
+    }
+    
+    .leaflet-container {
+        z-index: 1 !important;
+    }
+    
+    .leaflet-control-container {
+        z-index: 1000 !important;
+    }
+    
+    .leaflet-popup {
+        z-index: 1001 !important;
+    }
+    
+    /* Pastikan navbar tidak menutupi map */
+    .navbar {
+        z-index: 9999 !important;
+    }
+</style>
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
@@ -10,47 +38,49 @@
         // Koordinat Kampung Skouw Yambe yang akurat
         const skouwYambe = [-2.612338, 140.850206];
         
-        // Membuat peta dengan zoom level yang lebih dekat
-        const map = L.map('map').setView(skouwYambe, 16);
+        // Map untuk section Lokasi Kami
+        setTimeout(function() {
+            const mapElement = document.getElementById('map');
+            if (!mapElement) {
+                console.error('Map element not found');
+                return;
+            }
+            
+            const map = L.map('map', {
+                zoomControl: false
+            }).setView(skouwYambe, 15);
 
-        // Menambahkan tile layer satelit dari Google
-        L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-            attribution: '&copy; <a href="https://www.google.com/maps">Google Maps</a>',
-            maxZoom: 20
-        }).addTo(map);
+            L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                attribution: '&copy; <a href="https://www.google.com/maps">Google Maps</a>',
+                maxZoom: 20
+            }).addTo(map);
 
-        // Menambahkan marker dengan ikon kustom
-        const marker = L.marker(skouwYambe, {
-            title: "Kampung Skouw Yambe"
-        }).addTo(map);
+            const marker = L.marker(skouwYambe, {
+                title: "Kampung Skouw Yambe"
+            }).addTo(map);
 
-        // Menambahkan popup dengan informasi lebih detail
-        marker.bindPopup(`
-            <div class="p-2">
-                <h3 class="font-bold text-lg">Kampung Skouw Yambe</h3>
-                <p class="text-sm">Kampung Skouw Yambe, Muara Tami</p>
-                <p class="text-sm">Jayapura, Papua</p>
-                <p class="text-sm mt-2">Koordinat: 2°36'44.4"S 140°51'00.7"E</p>
-                <a href="https://www.google.com/maps?q=-2.612338,140.850206" 
-                   target="_blank" 
-                   class="inline-block mt-2 px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700 transition-colors">
-                    Lihat di Google Maps
-                </a>
-            </div>
-        `);
+            marker.bindPopup(`
+                <div class="p-2">
+                    <h3 class="font-bold text-lg">Kampung Skouw Yambe</h3>
+                    <p class="text-sm">Muara Tami, Jayapura, Papua</p>
+                    <p class="text-sm mt-2">Koordinat: 2°36'44.4"S 140°51'00.7"E</p>
+                </div>
+            `);
 
-        // Menambahkan circle untuk area kampung dengan radius yang lebih sesuai
-        const circle = L.circle(skouwYambe, {
-            color: '#22c55e',
-            fillColor: '#22c55e',
-            fillOpacity: 0.1,
-            radius: 300 // Radius disesuaikan dengan ukuran kampung
-        }).addTo(map);
+            const circle = L.circle(skouwYambe, {
+                color: '#22c55e',
+                fillColor: '#22c55e',
+                fillOpacity: 0.1,
+                radius: 300
+            }).addTo(map);
 
-        // Menambahkan kontrol zoom
-        L.control.zoom({
-            position: 'bottomright'
-        }).addTo(map);
+            L.control.zoom({
+                position: 'bottomright'
+            }).addTo(map);
+
+            map.invalidateSize();
+            
+        }, 100);
     });
 </script>
 @endsection
@@ -135,103 +165,147 @@
     <!-- Section Sambutan Kepala Kampung -->
     <section id="sambutan" class="py-20 bg-gray-50">
         <div class="max-w-3xl mx-auto px-4 text-center">
-            <img loading="lazy" src="/images/contoh.png" alt="Kepala Kampung" class="mx-auto w-32 h-32 rounded-full object-cover mb-6 shadow-lg">
+            <div class="mx-auto w-32 h-32 rounded-full bg-green-100 flex items-center justify-center mb-6 shadow-lg">
+                <i class="fas fa-crown text-green-600 text-4xl"></i>
+            </div>
             <h2 class="text-2xl font-bold mb-2 text-green-700">Sambutan Kepala Kampung</h2>
             <p class="text-lg text-gray-700 mb-4">Assalamu'alaikum warahmatullahi wabarakatuh, Salam sejahtera untuk kita semua. Selamat datang di website resmi Kampung Skouw Yambe. Semoga website ini menjadi jendela informasi, komunikasi, dan pelayanan publik yang bermanfaat bagi seluruh warga dan pengunjung. Mari bersama membangun kampung yang maju, sejahtera, dan berbudaya.</p>
-            <p class="font-semibold text-green-800">marshelius membilong<br><span class="text-sm font-normal text-gray-600">Kepala Kampung Skouw Yambe</span></p>
+            <p class="font-semibold text-green-800">Marshelius Membilong<br><span class="text-sm text-gray-600">Kepala Kampung Skouw Yambe</span></p>
         </div>
     </section>
 
-    <!-- Section Map Kampung -->
-    <section id="map" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8 text-green-800">Peta Kampung Skouw Yambe</h2>
-            <div class="w-full h-64 rounded-xl overflow-hidden shadow-lg mb-8">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.9999999999995!2d140.6!3d-2.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x686c3b3b3b3b3b3b%3A0x3b3b3b3b3b3b3b3b!2sKampung%20Skouw%20Yambe%2C%20Muara%20Tami%2C%20Jayapura%2C%20Papua!5e0!3m2!1sid!2sid!4v1234567890!5m2!1sid!2sid&maptype=satellite" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- Jeda Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Struktur Organisasi Kampung</h3>
+            <p class="text-gray-600">Berikut adalah struktur organisasi pemerintahan Kampung Skouw Yambe yang terdiri dari Kepala Kampung, Sekretaris, Kepala Urusan, Kepala Seksi, dan Ketua RW.</p>
+        </div>
+    </section>
+    
+<section id="struktur" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-12 text-gray-800">Struktur Organisasi Kampung</h2>
+
+        <!-- Kepala Kampung -->
+            <div class="flex justify-center mb-12">
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center w-48">
+                    <div class="w-20 h-20 rounded-full mb-3 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-crown text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-gray-800 mb-1 text-center">Marshelius Membilong</h3>
+                <p class="text-gray-600 text-sm text-center">Kepala Kampung</p>
             </div>
-            <div class="text-center">
-                <a href="https://www.google.com/maps?q=-2.612338,140.850206" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300">Lihat di Google Maps</a>
+        </div>
+
+        <!-- Sekretaris & Kaur -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full mb-3 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-user-tie text-blue-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 text-center">Yansen Pattipeme</h3>
+                    <p class="text-gray-600 text-xs text-center">Sekretaris</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full mb-3 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-calculator text-green-600 text-lg"></i>
+            </div>
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 text-center">Eunike Pattipeme, SE</h3>
+                    <p class="text-gray-600 text-xs text-center">Kepala Urusan Keuangan</p>
+            </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full mb-3 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-clipboard-list text-purple-600 text-lg"></i>
+            </div>
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 text-center">George Pattipeme, S.IP</h3>
+                    <p class="text-gray-600 text-xs text-center">Kepala Urusan Umum</p>
+        </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full mb-3 bg-orange-100 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-orange-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 text-center">Dody P. Doleng, S.IP</h3>
+                    <p class="text-gray-600 text-xs text-center">Kepala Perencanaan dan Pembangunan</p>
+            </div>
+        </div>
+
+        <!-- Kasi -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full mb-3 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-landmark text-indigo-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 text-center">Christofel Rollo, S.IP</h3>
+                    <p class="text-gray-600 text-xs text-center">Kepala Seksi Pemerintahan</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full mb-3 bg-pink-100 flex items-center justify-center">
+                        <i class="fas fa-heart text-pink-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 text-center">Nelly P. Rumanasen</h3>
+                    <p class="text-gray-600 text-xs text-center">Kepala Seksi Kesejahteraan Masyarakat</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full mb-3 bg-teal-100 flex items-center justify-center">
+                        <i class="fas fa-hands-helping text-teal-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 text-center">Denisius Rollo</h3>
+                    <p class="text-gray-600 text-xs text-center">Kepala Seksi Pelayanan</p>
+            </div>
+            </div>
+
+                        <!-- Ketua RW -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full mb-3 bg-red-100 flex items-center justify-center">
+                        <i class="fas fa-users text-red-600 text-lg"></i>
+            </div>
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 text-center">Yehuda Pattipeme</h3>
+                    <p class="text-gray-600 text-xs text-center">Ketua RW I</p>
+        </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full mb-3 bg-yellow-100 flex items-center justify-center">
+                        <i class="fas fa-home text-yellow-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 text-center">Yunita Ramela</h3>
+                    <p class="text-gray-600 text-xs text-center">Ketua RW II</p>
+                </div>
+            </div>
+    </div>
+</section>
+
+    <!-- Informasi Tambahan Struktur -->
+    <section class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Tentang Struktur Organisasi</h3>
+            <p class="text-gray-600 mb-6">
+                Struktur organisasi Kampung Skouw Yambe mengikuti ketentuan perundang-undangan yang berlaku. 
+                Setiap anggota memiliki tugas dan fungsi yang jelas dalam melayani masyarakat dan mengembangkan kampung.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-green-700 mb-2">Kepala Kampung</h4>
+                    <p class="text-sm text-gray-600">Memimpin dan mengkoordinasikan seluruh kegiatan pemerintahan kampung</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-green-700 mb-2">Sekretaris & Kaur</h4>
+                    <p class="text-sm text-gray-600">Membantu kepala kampung dalam administrasi dan urusan teknis</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-green-700 mb-2">Kasi & RW</h4>
+                    <p class="text-sm text-gray-600">Melaksanakan tugas di tingkat seksi dan rukun warga</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Struktur Organisasi -->
-    <section id="struktur" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8 text-green-800">Struktur Organisasi Kampung</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Kepala Kampung -->
-                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Kampung" class="w-90 h-82 object-cover rounded-full mb-4">
-                    <h3 class="text-lg font-bold text-green-700 mb-1">Marshelius membilong</h3>
-                    <p class="text-gray-600 text-center">Kepala Kampung</p>
-                </div>
 
-                <!-- Sekretaris -->
-                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img loading="lazy" src="/images/contoh.png" alt="Sekretaris" class="w-90 h-82 object-cover rounded-full mb-4">
-                    <h3 class="text-lg font-bold text-green-700 mb-1">Yansen Pattipeme</h3>
-                    <p class="text-gray-600 text-center">Sekretaris</p>
-                </div>
-
-                <!-- Kaur Keuangan -->
-                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Urusan Keuangan" class="w-90 h-82 object-cover rounded-full mb-4">
-                    <h3 class="text-lg font-bold text-green-700 mb-1">Eunike Pattipeme, SE</h3>
-                    <p class="text-gray-600 text-center">Kepala Urusan Keuangan</p>
-                </div>
-
-                <!-- Kaur Umum -->
-                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Urusan Umum" class="w-90 h-82 object-cover rounded-full mb-4">
-                    <h3 class="text-lg font-bold text-green-700 mb-1">George Pattipeme, S.IP</h3>
-                    <p class="text-gray-600 text-center">Kepala Urusan Umum</p>
-                </div>
-
-                <!-- Kaur Perencanaan -->
-                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Perencanaan dan Pembangunan" class="w-90 h-82 object-cover rounded-full mb-4">
-                    <h3 class="text-lg font-bold text-green-700 mb-1">Dody P. Doleng, S.IP</h3>
-                    <p class="text-gray-600 text-center">Kepala Perencanaan dan Pembangunan</p>
-                </div>
-
-                <!-- Kasi Pemerintahan -->
-                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Seksi Pemerintahan" class="w-90 h-82 object-cover rounded-full mb-4">
-                    <h3 class="text-lg font-bold text-green-700 mb-1">Christofel Rollo, S.IP</h3>
-                    <p class="text-gray-600 text-center">Kepala Seksi Pemerintahan</p>
-                </div>
-
-                <!-- Kasi Kesejahteraan -->
-                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Seksi Kesejahteraan Masyarakat" class="w-90 h-82 object-cover rounded-full mb-4">
-                    <h3 class="text-lg font-bold text-green-700 mb-1">Nelly P. Rumanasen</h3>
-                    <p class="text-gray-600 text-center">Kepala Seksi Kesejahteraan Masyarakat</p>
-                </div>
-
-                <!-- Kasi Pelayanan -->
-                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img loading="lazy" src="/images/contoh.png" alt="Kepala Seksi Pelayanan" class="w-90 h-82 object-cover rounded-full mb-4">
-                    <h3 class="text-lg font-bold text-green-700 mb-1">Denisius Rollo</h3>
-                    <p class="text-gray-600 text-center">Kepala Seksi Pelayanan</p>
-                </div>
-
-                <!-- Ketua RW I -->
-                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img loading="lazy" src="/images/contoh.png" alt="Ketua RW I" class="w-90 h-82 object-cover rounded-full mb-4">
-                    <h3 class="text-lg font-bold text-green-700 mb-1">Yehuda Pattipeme</h3>
-                    <p class="text-gray-600 text-center">Ketua RW I</p>
-                </div>
-
-                <!-- Ketua RW II -->
-                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
-                    <img loading="lazy" src="/images/contoh.png" alt="Ketua RW II" class="w-90 h-82 object-cover rounded-full mb-4">
-                    <h3 class="text-lg font-bold text-green-700 mb-1">Yunita Ramela</h3>
-                    <p class="text-gray-600 text-center">Ketua RW II</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Section Administrasi Penduduk -->
     <section id="administrasi" class="py-20 bg-white">
@@ -320,10 +394,7 @@
                     @endforeach
                 </div>
             @endif
-            <div class="text-center mt-8">
-                <a href="/galeri" class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300">
-                    Lihat Semua Galeri
-                </a>
+
             </div>
         </div>
     </section>
@@ -409,9 +480,7 @@
                     Kampung Skouw Yambe memiliki sejarah panjang yang kaya akan budaya dan peran penting dalam sejarah Indonesia. 
                     Mari kita jelajahi lebih dalam tentang asal-usul dan perjalanan kampung kami.
                 </p>
-                <a href="{{ route('sejarah') }}" class="inline-flex items-center justify-center rounded-md bg-green-600 px-6 py-3 text-sm font-medium text-white shadow transition-colors hover:bg-green-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-500 disabled:pointer-events-none disabled:opacity-50">
-                    Baca Selengkapnya
-                </a>
+    
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">

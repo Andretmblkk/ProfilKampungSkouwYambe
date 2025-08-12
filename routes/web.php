@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\GaleriController;
 
 Route::get('/', [WebController::class, 'home'])->name('home');
 
@@ -10,7 +11,7 @@ Route::get('/sejarah', [WebController::class, 'sejarah'])->name('sejarah');
 
 Route::get('/potensi', [WebController::class, 'potensi'])->name('potensi');
 
-Route::get('/galeri', [WebController::class, 'galeri'])->name('galeri');
+Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri');
 
 Route::get('/profil', [WebController::class, 'profil'])->name('profil');
 
