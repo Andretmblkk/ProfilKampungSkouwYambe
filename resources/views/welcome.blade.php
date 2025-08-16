@@ -10,7 +10,7 @@
         <div class="relative min-h-screen bg-background">
             <!-- Hero Section -->
             <div class="relative h-screen flex items-center justify-center">
-                <div class="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center">
+                <div class="absolute inset-0 bg-[url('/images/1.jpg')] bg-cover bg-center">
                     <div class="absolute inset-0 bg-black/50"></div>
                 </div>
                 <div class="relative z-10 text-center space-y-4">
