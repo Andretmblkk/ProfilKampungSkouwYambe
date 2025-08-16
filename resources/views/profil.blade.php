@@ -6,16 +6,16 @@
 <style>
 /* Animations */
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px);}
-    to { opacity: 1; transform: translateY(0);}
+    from { opacity: 0; transform: translateY(30px);} 
+    to { opacity: 1; transform: translateY(0);} 
 }
 @keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-30px);}
-    to { opacity: 1; transform: translateX(0);}
+    from { opacity: 0; transform: translateX(-30px);} 
+    to { opacity: 1; transform: translateX(0);} 
 }
 @keyframes slideInRight {
-    from { opacity: 0; transform: translateX(30px);}
-    to { opacity: 1; transform: translateX(0);}
+    from { opacity: 0; transform: translateX(30px);} 
+    to { opacity: 1; transform: translateX(0);} 
 }
 .animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
 .animate-slide-left { animation: slideInLeft 0.8s ease-out forwards; }
@@ -23,327 +23,305 @@
 .animate-on-scroll { opacity: 0; transform: translateY(30px); }
 
 /* Card Hover */
-.card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);}
+.card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);} 
 .card-hover:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
 }
 
 /* Icon Bounce */
-.icon-bounce { transition: all 0.3s ease;}
+.icon-bounce { transition: all 0.3s ease;} 
 .icon-bounce:hover { transform: scale(1.1) rotate(5deg); }
 
 /* Gradient Text */
 .gradient-text {
     background: linear-gradient(135deg, #64748b 0%, #475569 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
 }
 
 /* Floating */
-.floating { animation: floating 3s ease-in-out infinite;}
+.floating { animation: floating 3s ease-in-out infinite;} 
 @keyframes floating {
-    0%, 100% { transform: translateY(0px);}
-    50% { transform: translateY(-10px);}
+    0%, 100% { transform: translateY(0px);} 
+    50% { transform: translateY(-10px);} 
 }
 
 /* Pulse Glow */
-.pulse-glow { animation: pulse-glow 2s ease-in-out infinite alternate;}
+.pulse-glow { animation: pulse-glow 2s ease-in-out infinite alternate;} 
 @keyframes pulse-glow {
-    from { box-shadow: 0 0 20px rgba(100, 116, 139, 0.3);}
-    to { box-shadow: 0 0 30px rgba(100, 116, 139, 0.6);}
+    from { box-shadow: 0 0 20px rgba(100, 116, 139, 0.3);} 
+    to { box-shadow: 0 0 30px rgba(100, 116, 139, 0.6);} 
 }
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Intersection Observer untuk animasi scroll
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('animate-fade-in');
-                }, index * 200);
+                setTimeout(() => { entry.target.classList.add('animate-fade-in'); }, index * 200);
             }
         });
     }, observerOptions);
 
-    // Observe semua elemen dengan class animate-on-scroll
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
-    });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-    // Hover effects untuk cards
     document.querySelectorAll('.card-hover').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-8px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
+        card.addEventListener('mouseenter', function() { this.style.transform = 'translateY(-8px) scale(1.02)'; });
+        card.addEventListener('mouseleave', function() { this.style.transform = 'translateY(0) scale(1)'; });
     });
 
-    // Icon bounce effects
     document.querySelectorAll('.icon-bounce').forEach(icon => {
-        icon.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.2) rotate(10deg)';
-        });
-        
-        icon.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1) rotate(0deg)';
-        });
-    });
-
-    // Parallax effect untuk background
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const parallax = document.querySelector('.parallax-bg');
-        if (parallax) {
-            const speed = scrolled * 0.5;
-            parallax.style.transform = `translateY(${speed}px)`;
-        }
+        icon.addEventListener('mouseenter', function() { this.style.transform = 'scale(1.2) rotate(10deg)'; });
+        icon.addEventListener('mouseleave', function() { this.style.transform = 'scale(1) rotate(0deg)'; });
     });
 });
 </script>
 @endsection
 
 @section('content')
-<div class="bg-gradient-to-br from-gray-50 via-slate-50 to-zinc-50 py-12 min-h-screen">
-    <div class="max-w-6xl mx-auto px-4">
-        <!-- Header Section -->
-        <div class="text-center mb-16 animate-on-scroll">
-            <h1 class="text-5xl font-bold mb-4 gradient-text floating">
-                Profil Kampung Skouw Yambe
-            </h1>
-            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
-                Kampung adat yang kaya akan budaya, alam yang indah, dan masyarakat yang harmonis di Distrik Muara Tami, Kota Jayapura, Papua
-            </p>
-        </div>
+<!-- Hero Section -->
+<div class="relative h-72 md:h-96 overflow-hidden">
+	<img src="/images/tangfa.jpg" alt="Profil Kampung Skouw Yambe" class="absolute inset-0 w-full h-full object-cover">
+	<div class="absolute inset-0 bg-black/50"></div>
+	<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center justify-center text-center">
+		<div class="max-w-3xl mx-auto">
+			<h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Profil Kampung Skouw Yambe</h1>
+			<p class="text-xl text-slate-100 mb-2 leading-relaxed text-white mb-5 ">Kampung adat yang kaya akan budaya, alam yang indah, dan masyarakat yang harmonis</p>
+		</div>
+	</div>
+</div>
 
-        <!-- Overview Section -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 card-hover animate-on-scroll">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="animate-slide-left">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">
-                        <i class="fas fa-home mr-3 text-gray-600 icon-bounce"></i>
-                        Tentang Kampung Kami
-                    </h2>
-                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                        Kampung Skouw Yambe adalah kampung adat yang terletak di Distrik Muara Tami, Kota Jayapura, Papua. 
-                        Dikenal dengan keindahan alam yang memukau, pantai berpasir hitam yang eksotis, dan konservasi penyu 
-                        yang menjadi kebanggaan kampung.
-                    </p>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Masyarakat kampung hidup rukun dalam harmoni, menjaga tradisi dan kearifan lokal, serta aktif 
-                        dalam pembangunan kampung menuju kemandirian dan kesejahteraan bersama.
-                    </p>
-                </div>
-                <div class="flex justify-center animate-slide-right">
-                    <div class="w-full max-w-md rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                        <img src="/images/1.png" alt="Panorama Kampung Skouw Yambe" class="w-full h-72 object-cover hover:scale-110 transition-transform duration-500">
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Main Content -->
+<div class="bg-gray-50 py-16">
+	<div class="max-w-6xl mx-auto px-4">
+		<!-- Overview Section -->
+		<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-12 card-hover animate-on-scroll">
+			<div class="grid md:grid-cols-2 gap-8 items-center">
+				<div class="animate-slide-left">
+					<h2 class="text-3xl font-bold text-gray-800 mb-4">
+						<i class="fas fa-home mr-3 text-slate-600 icon-bounce"></i>
+						Tentang Kampung Kami
+					</h2>
+					<p class="text-gray-700 text-lg leading-relaxed mb-6">
+						Kampung Skouw Yambe adalah kampung adat yang terletak di Distrik Muara Tami, Kota Jayapura, Papua. 
+						Dikenal dengan keindahan alam yang memukau, pantai berpasir hitam yang eksotis, dan konservasi penyu 
+						yang menjadi kebanggaan kampung.
+					</p>
+					<p class="text-gray-700 text-lg leading-relaxed">
+						Masyarakat kampung hidup rukun dalam harmoni, menjaga tradisi dan kearifan lokal, serta aktif 
+						dalam pembangunan kampung menuju kemandirian dan kesejahteraan bersama.
+					</p>
+				</div>
+				<div class="flex justify-center animate-slide-right">
+					<div class="w-full max-w-md rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+						<img src="/images/1.png" alt="Panorama Kampung Skouw Yambe" class="w-full h-72 object-cover hover:scale-110 transition-transform duration-500">
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <!-- Visi Misi Section -->
-        <div class="grid lg:grid-cols-2 gap-8 mb-12">
-            <!-- Visi -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
-                <div class="text-center mb-6">
-                    <div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
-                        <i class="fas fa-eye text-slate-600 text-3xl icon-bounce"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold text-slate-700">Visi</h2>
-                </div>
-                <div class="text-center">
-                    <blockquote class="text-xl text-gray-700 italic leading-relaxed">
-                        "Mewujudkan Kampung Skouw Yambe yang <span class="font-bold text-slate-600">Bersih</span>, 
-                        <span class="font-bold text-slate-600">Indah</span>,
-                        <span class="font-bold text-slate-600">Damai</span>,<span class="font-bold text-slate-600">Aman</span>,<span class="font-bold text-slate-600">Beriman</span> dan <span class="font-bold text-slate-600">sejahtera</span> menuju masyarakat yang mandiri, dan takut akan Tuhan"
-                    </blockquote>
-                </div>
-            </div>
+		<!-- Visi Misi Section -->
+		<div class="grid lg:grid-cols-2 gap-8 mb-12">
+			<!-- Visi -->
+			<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 card-hover animate-on-scroll">
+				<div class="text-center mb-6">
+					<div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+						<i class="fas fa-eye text-slate-600 text-3xl icon-bounce"></i>
+					</div>
+					<h2 class="text-3xl font-bold text-slate-700">Visi</h2>
+				</div>
+				<div class="text-center">
+					<blockquote class="text-xl text-gray-700 italic leading-relaxed">
+						"Mewujudkan Kampung Skouw Yambe yang <span class="font-bold text-slate-600">Bersih</span>, 
+						<span class="font-bold text-slate-600">Indah</span>,
+						<span class="font-bold text-slate-600">Damai</span>, <span class="font-bold text-slate-600">Aman</span>, <span class="font-bold text-slate-600">Beriman</span> dan <span class="font-bold text-slate-600">sejahtera</span> menuju masyarakat yang mandiri, dan takut akan Tuhan"
+					</blockquote>
+				</div>
+			</div>
 
-            <!-- Misi -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
-                <div class="text-center mb-6">
-                    <div class="bg-gray-100 rounded-full p-4 inline-block mb-4 pulse-glow">
-                        <i class="fas fa-bullseye text-gray-600 text-3xl icon-bounce"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold text-gray-700">Misi</h2>
-                </div>
-                <div class="space-y-4">
-                    <div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-300">
-                        <i class="fas fa-graduation-cap text-slate-600 mt-1 mr-3 icon-bounce"></i>
-                        <p class="text-gray-700">Mengayomi masyarakat Kampung Skouw Yambe untuk memanfaatkan Sumber Daya Alam (SDA) untuk menjadi sumber ekonomi masyarakat</p>
-                    </div>
-                    <div class="flex items-start p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
-                        <i class="fas fa-chart-line text-gray-600 mt-1 mr-3 icon-bounce"></i>
-                        <p class="text-gray-700">Mengembangkan potensi ekonomi lokal berbasis pertanian, kelapa, dan UMKM</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Tujuan Section -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 card-hover animate-on-scroll">
-            <div class="text-center mb-6">
-                <div class="bg-gray-100 rounded-full p-4 inline-block mb-4 pulse-glow">
-                    <i class="fas fa-bullseye text-gray-600 text-3xl icon-bounce"></i>
-                </div>
-                <h2 class="text-3xl font-bold text-gray-700">Tujuan</h2>
-            </div>
-            <div class="space-y-4">
-                <div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-300">
-                    <i class="fas fa-graduation-cap text-slate-600 mt-1 mr-3 icon-bounce"></i>
-                    <p class="text-gray-700">agar masyarakat dapat menjadi mandiri dan terlepas dari hidup yang ketergantungan kepada orang lain</p>
-                </div>
-            </div>
-        </div>
+			<!-- Misi -->
+			<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 card-hover animate-on-scroll">
+				<div class="text-center mb-6">
+					<div class="bg-gray-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+						<i class="fas fa-bullseye text-gray-600 text-3xl icon-bounce"></i>
+					</div>
+					<h2 class="text-3xl font-bold text-gray-700">Misi</h2>
+				</div>
+				<div class="space-y-4">
+					<div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-300">
+						<i class="fas fa-graduation-cap text-slate-600 mt-1 mr-3 icon-bounce"></i>
+						<p class="text-gray-700">Mengayomi masyarakat Kampung Skouw Yambe untuk memanfaatkan Sumber Daya Alam (SDA) untuk menjadi sumber ekonomi masyarakat</p>
+					</div>
+					<div class="flex items-start p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+						<i class="fas fa-chart-line text-gray-600 mt-1 mr-3 icon-bounce"></i>
+						<p class="text-gray-700">Mengembangkan potensi ekonomi lokal berbasis pertanian, kelapa, dan UMKM</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Tujuan & Sasaran Section -->
+		<div class="grid lg:grid-cols-2 gap-8 mb-12">
+			<!-- Tujuan -->
+			<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 card-hover animate-on-scroll">
+				<div class="text-center mb-6">
+					<div class="bg-emerald-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+						<i class="fas fa-target text-emerald-600 text-3xl icon-bounce"></i>
+					</div>
+					<h2 class="text-3xl font-bold text-emerald-700">Tujuan</h2>
+				</div>
+				<div class="space-y-4">
+					<div class="flex items-start p-4 bg-emerald-50 rounded-lg hover:bg-emerald-100 transition-colors duration-300">
+						<i class="fas fa-users text-emerald-600 mt-1 mr-3 icon-bounce"></i>
+						<p class="text-gray-700">Agar masyarakat dapat menjadi mandiri dan terlepas dari hidup yang ketergantungan kepada orang lain</p>
+					</div>
+				</div>
+			</div>
 
-        <!-- Sasaran Section -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 card-hover animate-on-scroll">
-            <div class="text-center mb-6">
-                <div class="bg-gray-100 rounded-full p-4 inline-block mb-4 pulse-glow">
-                    <i class="fas fa-bullseye text-gray-600 text-3xl icon-bounce"></i>
-                </div>
-                <h2 class="text-3xl font-bold text-gray-700">Sasaran</h2>
-            </div>
-            <div class="space-y-4">
-                <div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-300">
-                    <i class="fas fa-graduation-cap text-slate-600 mt-1 mr-3 icon-bounce"></i>
-                    <p class="text-gray-700">Toko pemerintah, masyarakat, adat dan gereja</p>
-                </div>
-            </div>
-        </div>
+			<!-- Sasaran -->
+			<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 card-hover animate-on-scroll">
+				<div class="text-center mb-6">
+					<div class="bg-blue-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+						<i class="fas fa-bullseye text-blue-600 text-3xl icon-bounce"></i>
+					</div>
+					<h2 class="text-3xl font-bold text-blue-700">Sasaran</h2>
+				</div>
+				<div class="space-y-4">
+					<div class="flex items-start p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-300">
+						<i class="fas fa-handshake text-blue-600 mt-1 mr-3 icon-bounce"></i>
+						<p class="text-gray-700">Toko pemerintah, masyarakat, adat dan gereja</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <!-- Sejarah Kampung Section -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 card-hover animate-on-scroll">
-            <div class="text-center mb-8">
-            <div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
-                <i class="fas fa-history text-slate-600 text-3xl icon-bounce"></i>
-            </div>
-            <h2 class="text-3xl font-bold text-slate-700">Sejarah Kampung</h2>
-            <p class="text-gray-600 mt-2">Perjalanan panjang kampung dari masa lalu hingga sekarang</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-            <!-- Asal Usul Kampung -->
-            <div class="animate-slide-left">
-                <h3 class="text-2xl font-bold text-slate-700 mb-4 flex items-center justify-center gap-2">
-                <i class="fas fa-clock text-slate-600 icon-bounce"></i>
-                Asal Usul Kampung
-                </h3>
-                <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
-                <li>Pada awalnya, pesisir Skouw hanya terdapat 2 kampung: <span class="font-semibold">TETANGPE</span> di barat dan <span class="font-semibold">TEHUPA</span> di timur.</li>
-                <li>Di selatan berdiam suku Rollo (Teleti).</li>
-                <li>Pertemuan antara Kepala Suku Patipeme dan Rollo membentuk kampung pertama bernama <span class="font-semibold">BAME</span> (kampung).</li>
-                <li>Suku Membilong dari PNG, Ramela dan Paew dari Holtekamp bergabung, membentuk kampung <span class="font-semibold">TETANGPE</span> ("Mereka makan bebas di atas tanah hak ulayat mereka").</li>
-                <li>Periode kekuasaan adat berlangsung dari abad XVII hingga 1945, dipimpin oleh Kepala-Kepala Suku.</li>
-                <li>Setelah Perang Dunia II, pemerintahan definitif dipimpin oleh seorang <span class="font-semibold">Korano</span> (Kepala Kampung).</li>
-                </ul>
-            </div>
-            <!-- Korano & Pemerintahan -->
-            <div class="animate-slide-right">
-                <h3 class="text-2xl font-bold text-slate-700 mb-4 flex items-center justify-center gap-2">
-                <i class="fas fa-calendar-alt text-slate-600 icon-bounce"></i>
-                Korano (Kepala Kampung)
-                </h3>
-                <div class="overflow-x-auto">
-                <div class="flex flex-col items-center">
-                    <table class="min-w-full text-left text-gray-700 mb-6 rounded-lg shadow border" style="max-width: 400px;">
-                        <thead>
-                        <tr class="bg-slate-50">
-                            <th class="py-2 px-4 font-semibold">Nama</th>
-                            <th class="py-2 px-4 font-semibold">Periode</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr><td class="py-2 px-4">Yakob Patipeme</td><td class="py-2 px-4">1945-1947</td></tr>
-                        <tr><td class="py-2 px-4">Wellem Rollo</td><td class="py-2 px-4">1947-1956</td></tr>
-                        <tr><td class="py-2 px-4">Herman Rollo</td><td class="py-2 px-4">1956-1965</td></tr>
-                        <tr><td class="py-2 px-4">Markus Pattipeme</td><td class="py-2 px-4">1965-1976</td></tr>
-                        <tr><td class="py-2 px-4">Marinus Rollo</td><td class="py-2 px-4">1976-1968</td></tr>
-                        <tr><td class="py-2 px-4">Dominggus Foa</td><td class="py-2 px-4">1968-1972</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                </div>
-                <h3 class="text-2xl font-bold text-slate-700 mb-4 flex items-center justify-center gap-2">
-                <i class="fas fa-star text-slate-600 icon-bounce"></i>
-                Transformasi Pemerintahan
-                </h3>
-                <p class="text-gray-700 leading-relaxed mb-4">
-                Tahun 1972, struktur pemerintahan berubah menjadi Pemerintah Desa yang dipimpin oleh <span class="font-semibold">Melkisedek Rollo</span>.
-                </p>
-                <p class="text-gray-700 leading-relaxed">
-                Kini, Kampung Skouw Yambe berkembang menjadi kampung modern yang tetap menjaga identitas budaya. Pembangunan ekonomi, pendidikan, dan kesehatan terus ditingkatkan, sambil melestarikan alam dan budaya sebagai warisan berharga.
-                </p>
-            </div>
-            </div>
-        </div>
+		<!-- Sejarah Kampung Section -->
+		<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-12 card-hover animate-on-scroll">
+			<div class="text-center mb-8">
+				<div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+					<i class="fas fa-history text-slate-600 text-3xl icon-bounce"></i>
+				</div>
+				<h2 class="text-3xl font-bold text-slate-700">Sejarah Kampung</h2>
+				<p class="text-gray-600 mt-2">Perjalanan panjang kampung dari masa lalu hingga sekarang</p>
+			</div>
+			<div class="grid md:grid-cols-2 gap-8">
+				<!-- Asal Usul Kampung -->
+				<div class="animate-slide-left">
+					<h3 class="text-2xl font-bold text-slate-700 mb-4 flex items-center justify-center gap-2">
+						<i class="fas fa-clock text-slate-600 icon-bounce"></i>
+						Asal Usul Kampung
+					</h3>
+					<ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
+						<li>Pada awalnya, pesisir Skouw hanya terdapat 2 kampung: <span class="font-semibold">TETANGPE</span> di barat dan <span class="font-semibold">TEHUPA</span> di timur.</li>
+						<li>Di selatan berdiam suku Rollo (Teleti).</li>
+						<li>Pertemuan antara Kepala Suku Patipeme dan Rollo membentuk kampung pertama bernama <span class="font-semibold">BAME</span> (kampung).</li>
+						<li>Suku Membilong dari PNG, Ramela dan Paew dari Holtekamp bergabung, membentuk kampung <span class="font-semibold">TETANGPE</span> ("Mereka makan bebas di atas tanah hak ulayat mereka").</li>
+						<li>Periode kekuasaan adat berlangsung dari abad XVII hingga 1945, dipimpin oleh Kepala-Kepala Suku.</li>
+						<li>Setelah Perang Dunia II, pemerintahan definitif dipimpin oleh seorang <span class="font-semibold">Korano</span> (Kepala Kampung).</li>
+					</ul>
+				</div>
+				<!-- Korano & Pemerintahan -->
+				<div class="animate-slide-right">
+					<h3 class="text-2xl font-bold text-slate-700 mb-4 flex items-center justify-center gap-2">
+						<i class="fas fa-calendar-alt text-slate-600 icon-bounce"></i>
+						Korano (Kepala Kampung)
+					</h3>
+					<div class="overflow-x-auto">
+						<div class="flex flex-col items-center">
+							<table class="min-w-full text-left text-gray-700 mb-6 rounded-lg shadow border" style="max-width: 400px;">
+								<thead>
+									<tr class="bg-slate-50">
+										<th class="py-2 px-4 font-semibold">Nama</th>
+										<th class="py-2 px-4 font-semibold">Periode</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr><td class="py-2 px-4">Yakob Patipeme</td><td class="py-2 px-4">1945-1947</td></tr>
+									<tr><td class="py-2 px-4">Wellem Rollo</td><td class="py-2 px-4">1947-1956</td></tr>
+									<tr><td class="py-2 px-4">Herman Rollo</td><td class="py-2 px-4">1956-1965</td></tr>
+									<tr><td class="py-2 px-4">Markus Pattipeme</td><td class="py-2 px-4">1965-1976</td></tr>
+									<tr><td class="py-2 px-4">Marinus Rollo</td><td class="py-2 px-4">1976-1968</td></tr>
+									<tr><td class="py-2 px-4">Dominggus Foa</td><td class="py-2 px-4">1968-1972</td></tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<h3 class="text-2xl font-bold text-slate-700 mb-4 flex items-center justify-center gap-2">
+						<i class="fas fa-star text-slate-600 icon-bounce"></i>
+						Transformasi Pemerintahan
+					</h3>
+					<p class="text-gray-700 leading-relaxed mb-4">
+						Tahun 1972, struktur pemerintahan berubah menjadi Pemerintah Desa yang dipimpin oleh <span class="font-semibold">Melkisedek Rollo</span>.
+					</p>
+					<p class="text-gray-700 leading-relaxed">
+						Kini, Kampung Skouw Yambe berkembang menjadi kampung modern yang tetap menjaga identitas budaya. Pembangunan ekonomi, pendidikan, dan kesehatan terus ditingkatkan, sambil melestarikan alam dan budaya sebagai warisan berharga.
+					</p>
+				</div>
+			</div>
+		</div>
 
-        <!-- Potensi dan Keunggulan -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 card-hover animate-on-scroll">
-            <div class="text-center mb-8">
-            <div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
-                <i class="fas fa-gem text-slate-600 text-3xl icon-bounce"></i>
-            </div>
-            <h2 class="text-3xl font-bold text-slate-700">Potensi & Keunggulan</h2>
-            <p class="text-gray-600 mt-2">Kekayaan alam dan budaya yang menjadi kebanggaan kampung</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="text-center p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl card-hover flex flex-col items-center">
-                <i class="fas fa-umbrella-beach text-slate-600 text-4xl mb-4 icon-bounce floating"></i>
-                <h3 class="font-bold text-slate-800 mb-2">Pantai Eksotis</h3>
-                <p class="text-slate-700 text-sm">Pantai berpasir hitam dengan sunset yang memukau</p>
-            </div>
-            <div class="text-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl card-hover flex flex-col items-center">
-                <i class="fas fa-fish text-gray-600 text-4xl mb-4 icon-bounce floating"></i>
-                <h3 class="font-bold text-gray-800 mb-2">Konservasi Penyu</h3>
-                <p class="text-gray-700 text-sm">Program pelestarian penyu yang berkelanjutan</p>
-            </div>
-            <div class="text-center p-6 bg-gradient-to-br from-zinc-50 to-zinc-100 rounded-xl card-hover flex flex-col items-center">
-                <i class="fas fa-home text-zinc-600 text-4xl mb-4 icon-bounce floating"></i>
-                <h3 class="font-bold text-zinc-800 mb-2">Budaya Adat</h3>
-                <p class="text-zinc-700 text-sm">Rumah adat dan tradisi yang masih terjaga</p>
-            </div>
-            <div class="text-center p-6 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl card-hover flex flex-col items-center">
-                <i class="fas fa-tree text-neutral-600 text-4xl mb-4 icon-bounce floating"></i>
-                <h3 class="font-bold text-neutral-800 mb-2">Kelapa Organik</h3>
-                <p class="text-neutral-700 text-sm">Produksi kelapa dan minyak kelapa berkualitas</p>
-            </div>
-            </div>
-        </div>
+		<!-- Potensi dan Keunggulan -->
+		<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-12 card-hover animate-on-scroll">
+			<div class="text-center mb-8">
+				<div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+					<i class="fas fa-gem text-slate-600 text-3xl icon-bounce"></i>
+				</div>
+				<h2 class="text-3xl font-bold text-slate-700">Potensi & Keunggulan</h2>
+				<p class="text-gray-600 mt-2">Kekayaan alam dan budaya yang menjadi kebanggaan kampung</p>
+			</div>
+			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+				<div class="text-center p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl card-hover flex flex-col items-center">
+					<i class="fas fa-umbrella-beach text-slate-600 text-4xl mb-4 icon-bounce floating"></i>
+					<h3 class="font-bold text-slate-800 mb-2">Pantai Eksotis</h3>
+					<p class="text-slate-700 text-sm">Pantai berpasir hitam dengan sunset yang memukau</p>
+				</div>
+				<div class="text-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl card-hover flex flex-col items-center">
+					<i class="fas fa-fish text-gray-600 text-4xl mb-4 icon-bounce floating"></i>
+					<h3 class="font-bold text-gray-800 mb-2">Konservasi Penyu</h3>
+					<p class="text-gray-700 text-sm">Program pelestarian penyu yang berkelanjutan</p>
+				</div>
+				<div class="text-center p-6 bg-gradient-to-br from-zinc-50 to-zinc-100 rounded-xl card-hover flex flex-col items-center">
+					<i class="fas fa-home text-zinc-600 text-4xl mb-4 icon-bounce floating"></i>
+					<h3 class="font-bold text-zinc-800 mb-2">Budaya Adat</h3>
+					<p class="text-zinc-700 text-sm">Rumah adat dan tradisi yang masih terjaga</p>
+				</div>
+				<div class="text-center p-6 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl card-hover flex flex-col items-center">
+					<i class="fas fa-tree text-neutral-600 text-4xl mb-4 icon-bounce floating"></i>
+					<h3 class="font-bold text-neutral-800 mb-2">Kelapa Organik</h3>
+					<p class="text-neutral-700 text-sm">Produksi kelapa dan minyak kelapa berkualitas</p>
+				</div>
+			</div>
+		</div>
 
-        <!-- Struktur Organisasi Section -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 card-hover animate-on-scroll">
-            <div class="text-center mb-8">
-                <div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
-                    <i class="fas fa-sitemap text-slate-600 text-3xl icon-bounce"></i>
-                </div>
-                <h2 class="text-3xl font-bold text-slate-700">Struktur Organisasi</h2>
-                <p class="text-gray-600 mt-2">Hierarki kepemimpinan dan organisasi kampung</p>
-            </div>
+		<!-- Struktur Organisasi Section -->
+		<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 card-hover animate-on-scroll">
+			<div class="text-center mb-8">
+				<div class="bg-slate-100 rounded-full p-4 inline-block mb-4 pulse-glow">
+					<i class="fas fa-sitemap text-slate-600 text-3xl icon-bounce"></i>
+				</div>
+				<h2 class="text-3xl font-bold text-slate-700">Struktur Organisasi</h2>
+				<p class="text-gray-600 mt-2">Hierarki kepemimpinan dan organisasi kampung</p>
+			</div>
 
-            <div class="flex justify-center">
-                <!-- Struktur Pemerintahan Kampung -->
-                <div class="text-center animate-slide-left max-w-4xl">
-                    <h3 class="text-2xl font-bold text-slate-700 mb-6">
-                        <i class="fas fa-building mr-2 text-slate-600 icon-bounce"></i>
-                        Pemerintahan Kampung
-                    </h3>
-                    <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-6 card-hover">
-                        <img src="/images/struktur.jpg" alt="Struktur Organisasi Pemerintahan Kampung" 
-                             class="w-[700px] h-auto rounded-xl shadow-lg hover:scale-110 transition-transform duration-500 mx-auto">
-                        <p class="text-gray-600 mt-4 text-sm">Struktur organisasi pemerintahan kampung yang mengatur administrasi dan pelayanan publik</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+			<div class="flex justify-center">
+				<!-- Struktur Pemerintahan Kampung -->
+				<div class="text-center animate-slide-left max-w-4xl">
+					<h3 class="text-2xl font-bold text-slate-700 mb-6">
+						<i class="fas fa-building mr-2 text-slate-600 icon-bounce"></i>
+						Pemerintahan Kampung
+					</h3>
+					<div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-6 card-hover">
+						<img src="/images/struktur.jpg" alt="Struktur Organisasi Pemerintahan Kampung" 
+							 class="w-full max-w-[700px] h-auto rounded-xl shadow-lg hover:scale-110 transition-transform duration-500 mx-auto">
+						<p class="text-gray-600 mt-4 text-sm">Struktur organisasi pemerintahan kampung yang mengatur administrasi dan pelayanan publik</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 @endsection

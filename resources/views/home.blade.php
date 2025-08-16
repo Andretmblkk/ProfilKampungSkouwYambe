@@ -110,26 +110,52 @@
     <!-- Hero Text -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center">
         <div class="text-white w-full text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                Selamat Datang di Website Resmi Kampung Skouw Yambe, Kecamatan Muara Tami, Kota Jayapura, Papua
-            </h1>
-            <p class="text-base md:text-lg mb-6 max-w-2xl mx-auto">
-                Kampung Skouw Yambe adalah salah satu kampung di Kecamatan Muara Tami, Kota Jayapura, Papua. Kampung ini dikenal dengan keindahan alam, kekayaan budaya, dan potensi UMKM yang berkembang.
+            <div class="mb-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+                    <span class="block text-green-300">Selamat Datang di</span>
+                    <span class="block bg-gradient-to-r from-white via-green-100 to-white bg-clip-text text-transparent">Kampung Skouw Yambe</span>
+                </h1>
+            </div>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed text-gray-100 font-medium">
+                Kampung adat yang kaya akan budaya, alam yang memukau, dan masyarakat yang harmonis di Distrik Muara Tami, Kota Jayapura, 
             </p>
-            <div class="flex justify-center gap-4">
-                <a href="#jelajahi" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-md transition-colors duration-300">
-                    Jelajahi Desa
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                <a href="/kontak" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
+                    Hubungi Kami
                 </a>
+                <a href="/profil" class="border-2 border-white/30 hover:border-white text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:bg-white/10">
+                    Tentang Kampung
+                </a>
+            </div>
+            <div class="flex justify-center">
+                <div class="flex items-center gap-6 text-sm text-gray-200">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span>100% Adat</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                        <span>100% Budaya</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                        <span>100% Lokal</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Navigation Buttons -->
-    <button id="prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60">
-        &#10094;
+    <button id="prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/60 transition-all duration-300 hover:scale-110">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
     </button>
-    <button id="next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60">
-        &#10095;
+    <button id="next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/60 transition-all duration-300 hover:scale-110">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
     </button>
 </div>
 

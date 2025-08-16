@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\NewsletterController;
 
 Route::get('/', [WebController::class, 'home'])->name('home');
 
@@ -31,3 +32,14 @@ Route::get('/peta', [WebController::class, 'peta'])->name('peta');
 Route::get('/organisasi', [WebController::class, 'organisasi'])->name('organisasi');
 
 Route::post('/kontak', [ContactController::class, 'sendEmail'])->name('contact.send');
+
+// Newsletter Routes
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+Route::post('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
+Route::post('/newsletter/resubscribe', [NewsletterController::class, 'resubscribe'])->name('newsletter.resubscribe');
+Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe.get');
+
+// Test Route (Development only)
+Route::get('/test-newsletter', function() {
+    return view('test-newsletter');
+})->name('test.newsletter');

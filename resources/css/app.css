@@ -141,3 +141,122 @@
 .animation-delay-400 {
     animation-delay: 400ms;
 }
+
+/* Mobile Menu Animations */
+.mobile-menu-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+.mobile-menu-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+/* Smooth transitions for mobile menu */
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+}
+
+#mobile-menu.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+#mobile-menu:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Mobile menu button hover effects */
+#mobile-menu-button {
+    transition: all 0.2s ease-in-out;
+}
+
+#mobile-menu-button:hover {
+    transform: scale(1.05);
+}
+
+#mobile-menu-button:active {
+    transform: scale(0.95);
+}
+
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+/* Enhanced card hover effects */
+.group:hover .group-hover\:scale-105 {
+    transform: scale(1.05);
+}
+
+.group:hover .group-hover\:bg-green-200 {
+    background-color: rgb(187 247 208);
+}
+
+.group:hover .group-hover\:bg-blue-200 {
+    background-color: rgb(191 219 254);
+}
+
+.group:hover .group-hover\:bg-yellow-200 {
+    background-color: rgb(254 240 138);
+}
+
+.group:hover .group-hover\:bg-purple-200 {
+    background-color: rgb(233 213 255);
+}
+
+/* Smooth transitions for all interactive elements */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* Enhanced shadow utilities */
+.shadow-sm {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.shadow-xl {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}

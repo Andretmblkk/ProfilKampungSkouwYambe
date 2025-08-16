@@ -349,18 +349,20 @@ document.addEventListener('DOMContentLoaded', function() {
 @endsection
 
 @section('content')
+<!-- Hero Section -->
+<div class="relative h-72 md:h-96 overflow-hidden">
+    <img src="/images/4.jpg" alt="Infografis Kampung Skouw Yambe" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center justify-center text-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Infografis Kampung Skouw Yambe</h1>
+            <p class="text-xl text-white/90 mb-0 leading-relaxed">Data demografis dan informasi kampung dalam visual interaktif</p>
+        </div>
+    </div>
+</div>
+
 <div class="bg-gradient-to-br from-green-50 via-blue-50 to-indigo-50 py-12 min-h-screen">
     <div class="max-w-7xl mx-auto px-4">
-        <!-- Header Section -->
-        <div class="text-center mb-16 animate-on-scroll">
-            <h1 class="text-5xl font-bold mb-4 text-green-800 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-                Infografis Kampung Skouw Yambe
-            </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Data demografis dan informasi lengkap tentang kampung kami dalam bentuk visual yang interaktif
-            </p>
-        </div>
-
         <!-- Struktur Organisasi Section -->
         <div class="mb-20 animate-on-scroll">
             <div class="text-center mb-8">
@@ -538,11 +540,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <h4 class="font-bold text-orange-800">Kebun Kelapa</h4>
                                 <p class="text-orange-700 text-sm">Sentra produksi kelapa dan minyak kelapa</p>
                             </div>
-                </div>
+                        </div>
                         
                         <div class="flex items-start p-4 bg-gradient-to-r from-red-50 to-red-100 rounded-lg hover:from-red-100 hover:to-red-200 transition-colors">
                             <i class="fas fa-building text-red-600 mt-1 mr-3"></i>
-                <div>
+                            <div>
                                 <h4 class="font-bold text-red-800">Balai Kampung</h4>
                                 <p class="text-red-700 text-sm">Kantor pemerintahan dan pelayanan publik</p>
                             </div>

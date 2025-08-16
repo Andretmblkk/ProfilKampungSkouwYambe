@@ -44,16 +44,20 @@
             </div>
         </div>
 
+        </div>
+        
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="/" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Beranda</a>
-                <a href="/profil" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Profil</a>
-                <a href="/umkm" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">UMKM</a>
-                <a href="/berita" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Berita</a>
-                <a href="/infografis" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Infografis</a>
-                <a href="/peta" class="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Peta</a>
-                <a href="/kontak" class="block px-3 py-2 text-base font-medium rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors">Kontak</a>
+        <div class="md:hidden hidden border-t border-gray-200 dark:border-gray-800" id="mobile-menu">
+            <div class="container mx-auto px-4">
+                <div class="py-4 space-y-2">
+                    <a href="/" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Beranda</a>
+                    <a href="/profil" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Profil</a>
+                    <a href="/umkm" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">UMKM</a>
+                    <a href="/berita" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Berita</a>
+                    <a href="/infografis" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Infografis</a>
+                    <a href="/peta" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Peta</a>
+                    <a href="/kontak" class="block px-3 py-3 text-base font-medium rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors">Kontak</a>
+                </div>
             </div>
         </div>
     </header>
@@ -68,6 +72,17 @@
         <div class="container mx-auto px-4">
             <div class="text-center">
                 <p class="text-sm text-gray-600 dark:text-gray-400">&copy; {{ date('Y') }} Kampung Skouw Yambe. All rights reserved.</p>
+                
+                <!-- Minimalist Watermark -->
+                <div class="mt-3 flex justify-center">
+                    <div class="inline-flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+                        <span>Made with</span>
+                        <svg class="w-3 h-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>by <span class="font-medium text-gray-600 dark:text-gray-300">Andre Tumbelaka</span></span>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
