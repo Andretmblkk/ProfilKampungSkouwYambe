@@ -14,6 +14,79 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom styles for mobile menu */
+@layer components {
+    /* Mobile menu button improvements */
+    #mobile-menu-button {
+        @apply cursor-pointer select-none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* Mobile menu improvements */
+    #mobile-menu {
+        @apply transition-all duration-300 ease-in-out;
+        max-height: calc(100vh - 5rem);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Mobile menu links improvements */
+    #mobile-menu a {
+        @apply cursor-pointer select-none;
+        -webkit-tap-highlight-color: transparent;
+        min-height: 44px; /* Minimum touch target size */
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Prevent text selection on mobile */
+    @media (max-width: 768px) {
+        #mobile-menu-button,
+        #mobile-menu a {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    }
+    
+    /* Focus styles for accessibility */
+    #mobile-menu-button:focus {
+        @apply outline-none ring-2 ring-green-500 ring-offset-2;
+    }
+    
+    #mobile-menu a:focus {
+        @apply outline-none ring-2 ring-green-500 ring-offset-2;
+    }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 768px) {
+    /* Ensure proper z-index stacking */
+    header {
+        z-index: 9999 !important;
+    }
+    
+    /* Improve touch targets */
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Prevent zoom on input focus */
+    input, textarea, select {
+        font-size: 16px;
+    }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

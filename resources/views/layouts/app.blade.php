@@ -36,27 +36,31 @@
                 </nav>
 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" id="mobile-menu-button">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button 
+                    class="md:hidden relative w-12 h-12 flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 touch-manipulation" 
+                    id="mobile-menu-button"
+                    type="button"
+                    aria-label="Toggle mobile menu"
+                    aria-expanded="false"
+                >
+                    <svg class="h-6 w-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
         </div>
-
-        </div>
         
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden border-t border-gray-200 dark:border-gray-800" id="mobile-menu">
+        <div class="md:hidden hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg" id="mobile-menu">
             <div class="container mx-auto px-4">
-                <div class="py-4 space-y-2">
-                    <a href="/" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Beranda</a>
-                    <a href="/profil" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Profil</a>
-                    <a href="/umkm" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">UMKM</a>
-                    <a href="/berita" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Berita</a>
-                    <a href="/infografis" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Infografis</a>
-                    <a href="/peta" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Peta</a>
-                    <a href="/kontak" class="block px-3 py-3 text-base font-medium rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors">Kontak</a>
+                <div class="py-4 space-y-1">
+                    <a href="/" class="block px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors active:bg-gray-200 dark:active:bg-gray-700">Beranda</a>
+                    <a href="/profil" class="block px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors active:bg-gray-200 dark:active:bg-gray-700">Profil</a>
+                    <a href="/umkm" class="block px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors active:bg-gray-200 dark:active:bg-gray-700">UMKM</a>
+                    <a href="/berita" class="block px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors active:bg-gray-200 dark:active:bg-gray-700">Berita</a>
+                    <a href="/infografis" class="block px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors active:bg-gray-200 dark:active:bg-gray-700">Infografis</a>
+                    <a href="/peta" class="block px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors active:bg-gray-200 dark:active:bg-gray-700">Peta</a>
+                    <a href="/kontak" class="block px-4 py-3 text-base font-medium rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors active:bg-green-800">Kontak</a>
                 </div>
             </div>
         </div>

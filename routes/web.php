@@ -39,7 +39,11 @@ Route::post('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscrib
 Route::post('/newsletter/resubscribe', [NewsletterController::class, 'resubscribe'])->name('newsletter.resubscribe');
 Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe.get');
 
-// Test Route (Development only)
+// Test Routes (Development only)
 Route::get('/test-newsletter', function() {
     return view('test-newsletter');
 })->name('test.newsletter');
+
+Route::get('/test-mobile', function() {
+    return view('test-mobile');
+})->name('test.mobile');
